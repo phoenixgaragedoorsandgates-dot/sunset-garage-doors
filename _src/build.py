@@ -286,6 +286,10 @@ def home():
   </div>
 </section>
 
+<section class="feature-band" aria-label="Modern full-view glass garage door">
+  <img src="/images/modern-home-glass-door.jpg" alt="Modern home at dusk with a lit full-view glass garage door" loading="lazy" width="1125" height="750">
+</section>
+
 <section class="section" id="work">
   <div class="wrap">
     {label("III", "Recent Work")}
