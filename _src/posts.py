@@ -7,7 +7,7 @@ POSTS = [
         "title": "5 Signs Your Garage Door Spring Is Broken (and What to Do)",
         "description": "How to tell if your garage door spring is broken, why you shouldn't open the door, and what a technician does to fix it.",
         "date": "2026-11-26",
-        "image": "spring-broken-closeup",
+        "image": "spring-broken-studio",
         "related": "garage-door-spring-replacement",
         "body": """
 <p>Springs are the hardest-working part of your garage door. They counterbalance the door's weight so it can be lifted by hand or by an opener. When a spring breaks, the door suddenly becomes very heavy. Here's how to tell.</p>

@@ -111,6 +111,7 @@ SERVICES = [
             ("spring-broken-closeup", "Broken torsion spring with a visible gap in the coils", "Broken torsion spring"),
             ("spring-broken-gap", "Snapped garage door torsion spring on the shaft above the door", "Snapped spring"),
             ("spring-old-removed", "Worn torsion springs and old rollers removed during a spring replacement", "Old springs & rollers removed"),
+            ("spring-torsion-studio", "Close-up of a healthy galvanized torsion spring and winding cone", "Healthy torsion spring, close-up"),
             ("spring-torsion-installed", "New torsion spring installed above a garage door", "New torsion spring"),
             ("spring-two-torsion", "Two torsion springs installed on a wood-grain garage door with windows", "Two-spring setup"),
         ],
