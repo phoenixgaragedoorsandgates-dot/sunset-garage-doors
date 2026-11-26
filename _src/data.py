@@ -388,7 +388,11 @@ SERVICES = [
         "faqs": [
             ("Should I reprogram my opener after moving into a new home?", "Yes. The previous owners may still have remotes. We can clear the old codes and program new remotes for you."),
         ],
-        "image": "door-single-woodgrain",
+        "image": "remote-myq",
+        "gallery_title": "Remotes & keypads",
+        "gallery": [
+            ("keypad-wireless", "Wireless garage door keypad mounted outside a garage", "Wireless keypad"),
+        ],
     },
 ]
 
