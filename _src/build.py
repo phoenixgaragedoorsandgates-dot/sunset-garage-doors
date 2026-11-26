@@ -538,7 +538,7 @@ def contact_page():
     <div class="contact-cols">
       <div><h3>Address</h3><p>{e(BIZ["street"])}<br>{BIZ["city"]}, {BIZ["region"]} {BIZ["zip"]}</p></div>
       <div><h3>Hours</h3><ul class="hours">{hours}</ul></div>
-      <div><h3>License</h3><p>California Contractor #{BIZ["license"]}</p></div>
+      <div><h3>License</h3><p>CSLB License #{BIZ["license"]}</p></div>
       <div><h3>Follow &amp; review us</h3>{social_links()}</div>
     </div>
   </div>
