@@ -366,6 +366,11 @@ def service_page(s):
     post_html = ""
     if posts:
         post_html = '<div class="related-posts"><h3>From the blog</h3>' + "".join(f'<a class="link-arrow" href="/blog/{p["slug"]}/">{e(p["title"])} {ICON["arrow"]}</a>' for p in posts) + "</div>"
+    gallery_html = ""
+    if s.get("gallery"):
+        figs = "".join(f'<figure><figcaption>{e(cap)}</figcaption><img src="/images/{img}.jpg" alt="{e(alt)}" loading="lazy"></figure>' for img, alt, cap in s["gallery"])
+        gallery_html = f'''<section class="section"><div class="wrap">{label("", "Our " + s["name"].lower() + " work")}<div class="gallery gallery-4">{figs}</div></div></section>
+'''
     body = f"""
 <section class="page-head">
   <div class="wrap">
@@ -383,7 +388,7 @@ def service_page(s):
     <div class="prose-lg">{intro}</div>
   </div>
 </section>
-<section class="section">
+{gallery_html}<section class="section">
   <div class="wrap">
     {label("I", "Signs you need this")}
     <div class="two-col">

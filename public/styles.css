@@ -267,3 +267,6 @@ details[open] .plus::after { transform: rotate(0); }
   .marquee-track { animation: none; flex-wrap: wrap; min-width: 0; }
   .marquee-track[aria-hidden] { display: none; }
 }
+.gallery-4 { grid-template-columns: repeat(4, 1fr); }
+@media (max-width: 1000px) { .gallery-4 { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 760px) { .gallery-4 { grid-template-columns: 1fr 1fr; gap: 24px 12px; } .gallery-4 img { aspect-ratio: 3 / 4; } }

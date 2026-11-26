@@ -211,7 +211,13 @@ SERVICES = [
         "faqs": [
             ("Are one-piece doors still worth repairing?", "Often, yes. Springs and hardware can usually be replaced. If the door itself is rotted or warped, replacement usually makes more sense, and we'll give you both options."),
         ],
-        "image": "door-single-woodgrain",
+        "image": "onepiece-open",
+        "gallery": [
+            ("onepiece-open", "One-piece garage door with windows, fully open", "One-piece door, open"),
+            ("onepiece-hardware", "New one-piece garage door arms, bracket and extension springs", "Arms & springs"),
+            ("onepiece-technician", "Sunset Garage Doors technician adjusting one-piece door hardware", "Adjusting the hardware"),
+            ("onepiece-two-doors", "Two one-piece garage doors open on a garage remodel", "Two-door install"),
+        ],
     },
     {
         "slug": "garage-door-roller-hinge-replacement",
