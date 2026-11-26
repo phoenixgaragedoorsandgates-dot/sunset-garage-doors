@@ -8,7 +8,7 @@
   function settleOn(id, smooth) {
     var el = document.getElementById(id);
     if (!el) return;
-    var until = performance.now() + 2500, userMoved = false;
+    var until = performance.now() + 4000, userMoved = false;
     // Skip the section's empty top padding: land on its label/heading instead.
     var anchor = el.querySelector(".label, h1, h2") || el;
     var extra = anchor === el ? 0 : 20;
@@ -16,14 +16,25 @@
     function stop() { userMoved = true; }
     window.addEventListener("wheel", stop, { once: true, passive: true });
     window.addEventListener("touchstart", stop, { once: true, passive: true });
+    // One smooth scroll. Only after it has fully stopped do we check the
+    // position, and then gently correct (never mid-scroll, which shakes on iPhone).
     window.scrollTo({ top: y(), behavior: smooth ? "smooth" : "instant" });
-    var lastTarget = y();
-    (function check() {
+    var lastY = -1, still = 0, tries = 0;
+    (function watch() {
       if (userMoved || performance.now() > until) return;
-      var t = y();
-      if (Math.abs(t - lastTarget) > 2) { lastTarget = t; window.scrollTo({ top: t, behavior: "instant" }); }
-      else if (!smooth && Math.abs(window.pageYOffset - t) > 2 && Math.abs(window.pageYOffset - t) < 4000) window.scrollTo({ top: t, behavior: "instant" });
-      requestAnimationFrame(check);
+      var cur = window.pageYOffset;
+      still = Math.abs(cur - lastY) < 1 ? still + 1 : 0;
+      lastY = cur;
+      if (still >= 8) {
+        var t = y();
+        if (Math.abs(cur - t) > 4 && tries < 3) {
+          tries++; still = 0;
+          window.scrollTo({ top: t, behavior: Math.abs(cur - t) > 150 ? "smooth" : "instant" });
+        } else if (Math.abs(cur - t) <= 4) {
+          return;
+        }
+      }
+      requestAnimationFrame(watch);
     })();
   }
   document.addEventListener("click", function (e) {
