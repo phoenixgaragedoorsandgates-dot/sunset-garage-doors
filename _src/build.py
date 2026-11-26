@@ -238,7 +238,7 @@ def home():
       </div>
     </div>
   </div>
-  <div class="hero-media"><img src="/images/hero-home.jpg" alt="Modern home with black full-view glass garage doors at sunset" width="1125" height="750" fetchpriority="high"></div>
+  <div class="hero-media"><img src="/images/hero-home.jpg" srcset="/images/hero-home-1200.jpg 1200w, /images/hero-home.jpg 2400w" sizes="100vw" alt="Modern home with black full-view glass garage doors at sunset" width="2400" height="1600" fetchpriority="high"></div>
   <div class="wrap facts">
     <div><span class="fact-k">License</span><span class="fact-v">CA #{BIZ["license"]}</span></div>
     <div><span class="fact-k">In business</span><span class="fact-v">{BIZ["years"]} years</span></div>
