@@ -52,14 +52,13 @@
       down = true; dragging = false; anim = null;
       startX = lastX = e.clientX; startY = e.clientY; lastT = performance.now();
     });
-    el.addEventListener("pointermove", function (e) {
+    window.addEventListener("pointermove", function (e) {
       if (!down) return;
       var dx = e.clientX - startX, dy = e.clientY - startY;
       if (!dragging) {
         if (Math.abs(dx) < 6 || Math.abs(dx) < Math.abs(dy)) return;
         dragging = true; vel = 0;
         el.classList.add("dragging");
-        try { el.setPointerCapture(e.pointerId); } catch (err) {}
       }
       var now = performance.now(), mx = e.clientX - lastX;
       offset -= mx;
@@ -77,11 +76,10 @@
       }
       holdUntil = performance.now() + 2500;
     }
-    el.addEventListener("pointerup", end);
-    el.addEventListener("pointercancel", end);
-    el.addEventListener("lostpointercapture", end);
+    window.addEventListener("pointerup", end);
+    window.addEventListener("pointercancel", end);
     el.addEventListener("mouseenter", function () { hover = true; });
-    el.addEventListener("mouseleave", function () { hover = false; end(); });
+    el.addEventListener("mouseleave", function () { hover = false; });
     el.addEventListener("dragstart", function (e) { e.preventDefault(); });
     el.addEventListener("wheel", function (e) {
       if (Math.abs(e.deltaX) > Math.abs(e.deltaY)) { e.preventDefault(); offset += e.deltaX; vel = 0; holdUntil = performance.now() + 2500; }
