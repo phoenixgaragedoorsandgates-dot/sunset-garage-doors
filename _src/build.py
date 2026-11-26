@@ -124,7 +124,7 @@ def page(path, title, description, body, schemas=(), og_image="og", active=""):
         <strong>Sunset Garage Doors</strong>
         <div>{e(BIZ["street"])}<br>{BIZ["city"]}, {BIZ["region"]} {BIZ["zip"]}</div>
         <div><a href="tel:{TEL}">{PHONE}</a></div>
-        <div>CA License #{BIZ["license"]}</div>
+        <div>CSLB License #{BIZ["license"]}</div>
         {social_links()}
       </div>
       <div class="footer-col"><strong>Hours</strong>{hours}</div>
