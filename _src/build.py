@@ -135,7 +135,7 @@ def page(path, title, description, body, schemas=(), og_image="og", active=""):
 </footer>
 <div class="mobile-bar">
   <a class="btn btn-accent" href="tel:{TEL}">{ICON["phone"]}Call Now</a>
-  <a class="btn btn-ghost" href="sms:{TEL}">{ICON["text"]}Text a Photo</a>
+  <a class="btn btn-ghost" href="sms:{TEL}">{ICON["text"]}Text Us</a>
 </div>
 <script src="/site.js" defer></script>
 </body>
@@ -156,7 +156,7 @@ def cta_block(heading="Need your garage door fixed?", text="Call or text a photo
       <p class="lead">{e(text)}</p>
       <div class="btn-row">
         <a class="btn btn-accent" href="tel:{TEL}">{ICON["phone"]}Call {PHONE}</a>
-        <a class="btn btn-dark" href="sms:{TEL}">{ICON["text"]}Text a Photo</a>
+        <a class="btn btn-dark" href="sms:{TEL}">{ICON["text"]}Text Us</a>
       </div>
     </div>
   </div>
@@ -234,7 +234,7 @@ def home():
       <p class="lead">Broken springs, off-track doors, openers and new garage doors for homes across the San Gabriel Valley. Licensed, local, and backed by a written warranty on every job.</p>
       <div class="btn-row">
         <a class="btn btn-accent" href="tel:{TEL}">{ICON["phone"]}Call {PHONE}</a>
-        <a class="btn btn-dark" href="sms:{TEL}">{ICON["text"]}Text a Photo</a>
+        <a class="btn btn-dark" href="sms:{TEL}">{ICON["text"]}Text Us</a>
       </div>
     </div>
   </div>
@@ -262,7 +262,7 @@ def home():
       <h2 class="h-md">Local to Monrovia</h2>
       <div class="prose-lg">
         <p>Sunset Garage Doors has fixed and installed garage doors across the San Gabriel Valley for {BIZ["years"]} years, from our shop on Foothill Blvd in Monrovia.</p>
-        <p>We tell you what's wrong in plain English, fix it properly, and put our warranty in writing: one year on every repair, three years on every installation.</p>
+        <p>We explain exactly what's wrong, fix it properly, and put our warranty in writing: one year on every repair, three years on every installation.</p>
         <p>When something goes wrong later, you're calling a local, licensed contractor you can reach, not a call center.</p>
       </div>
     </div>
@@ -355,7 +355,7 @@ def service_page(s):
     <h1 class="h-xl">{e(s["title"])}</h1>
     <div class="btn-row">
       <a class="btn btn-accent" href="tel:{TEL}">{ICON["phone"]}Call {PHONE}</a>
-      <a class="btn btn-dark" href="sms:{TEL}">{ICON["text"]}Text a Photo</a>
+      <a class="btn btn-dark" href="sms:{TEL}">{ICON["text"]}Text Us</a>
     </div>
   </div>
 </section>
@@ -471,7 +471,7 @@ def contact_page():
       <p class="kicker">Call or text</p>
       <a class="phone-big" href="tel:{TEL}">{PHONE}</a>
       <p class="lead">Texting a photo or short video of the problem helps us tell you what's likely wrong and bring the right parts.</p>
-      <div class="btn-row"><a class="btn btn-accent" href="tel:{TEL}">{ICON["phone"]}Call Now</a><a class="btn btn-dark" href="sms:{TEL}">{ICON["text"]}Text a Photo</a></div>
+      <div class="btn-row"><a class="btn btn-accent" href="tel:{TEL}">{ICON["phone"]}Call Now</a><a class="btn btn-dark" href="sms:{TEL}">{ICON["text"]}Text Us</a></div>
     </div>
     <div class="contact-cols">
       <div><h3>Address</h3><p>{e(BIZ["street"])}<br>{BIZ["city"]}, {BIZ["region"]} {BIZ["zip"]}</p></div>

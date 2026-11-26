@@ -65,7 +65,7 @@ SERVICES = [
         "summary": "Noisy, stuck, slow or crooked doors diagnosed and fixed.",
         "intro": [
             "When your garage door stops working, your car is stuck inside, your house isn't secure and you've got a heavy door you can't trust. Sunset Garage Doors repairs residential garage doors across Monrovia and the San Gabriel Valley.",
-            "We figure out what's actually wrong, explain it in plain English, and fix it. Every repair comes with a 1-year warranty.",
+            "We find what's actually wrong, explain it clearly, and fix it. Every repair comes with a 1-year warranty.",
         ],
         "signs": [
             "The door won't open or close, or stops partway",
