@@ -106,7 +106,7 @@ SERVICES = [
             ("Can I open my garage door with a broken spring?", "We don't recommend it. Without the spring, the door's full weight is on you or the opener. Keep the door closed and call us."),
             ("Torsion vs. extension springs: what's the difference?", "Torsion springs mount on a bar above the door and twist to lift it. Extension springs run along the horizontal tracks and stretch. Both store a lot of tension and should be replaced by a technician."),
         ],
-        "image": "spring-broken-closeup",
+        "image": "spring-broken-studio",
         "gallery": [
             ("spring-broken-closeup", "Broken torsion spring with a visible gap in the coils", "Broken torsion spring"),
             ("spring-broken-gap", "Snapped garage door torsion spring on the shaft above the door", "Snapped spring"),
