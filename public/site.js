@@ -14,23 +14,51 @@
     });
   }
 
-  // Reviews carousel
+  // Reviews carousel: slow continuous scroll, pauses on hover/touch, arrows jump one card
   var track = document.querySelector(".carousel");
   if (!track) return;
-  function step() { var c = track.querySelector(".review"); return c ? c.getBoundingClientRect().width + 16 : 300; }
-  function go(dir) {
-    var max = track.scrollWidth - track.clientWidth - 4;
-    if (dir > 0 && track.scrollLeft >= max) track.scrollTo({ left: 0, behavior: "smooth" });
-    else if (dir < 0 && track.scrollLeft <= 4) track.scrollTo({ left: max, behavior: "smooth" });
-    else track.scrollBy({ left: dir * step(), behavior: "smooth" });
-  }
-  var paused = false, t;
-  function pause() { paused = true; clearTimeout(t); t = setTimeout(function () { paused = false; }, 12000); }
-  document.querySelectorAll(".carousel-btn").forEach(function (b) {
-    b.addEventListener("click", function () { go(+b.dataset.dir); pause(); });
+  var originals = Array.prototype.slice.call(track.children);
+  originals.forEach(function (c) {
+    var clone = c.cloneNode(true);
+    clone.setAttribute("aria-hidden", "true");
+    track.appendChild(clone);
   });
-  ["mouseenter", "touchstart", "focusin"].forEach(function (ev) { track.addEventListener(ev, pause, { passive: true }); });
-  if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-    setInterval(function () { if (!paused && !document.hidden) go(1); }, 6000);
+  function loopWidth() { return track.scrollWidth / 2; }
+  function cardStep() { var c = track.querySelector(".review"); return c ? c.getBoundingClientRect().width + 16 : 300; }
+  var pos = 0, hover = false, holdUntil = 0, last = null;
+  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var SPEED = 40; // pixels per second
+
+  function tick(now) {
+    if (last === null) last = now;
+    var dt = Math.min(now - last, 100) / 1000;
+    last = now;
+    if (!hover && now > holdUntil && !reduce) {
+      pos += SPEED * dt;
+      var w = loopWidth();
+      if (pos >= w) pos -= w;
+      track.scrollLeft = pos;
+    } else {
+      pos = track.scrollLeft;
+    }
+    requestAnimationFrame(tick);
   }
+  requestAnimationFrame(tick);
+
+  function jump(dir) {
+    var w = loopWidth();
+    var target = track.scrollLeft + dir * cardStep();
+    if (target < 0) { track.scrollLeft += w; target += w; }
+    if (target >= w) { track.scrollLeft -= w; target -= w; }
+    holdUntil = performance.now() + 4000;
+    track.scrollTo({ left: target, behavior: "smooth" });
+  }
+  document.querySelectorAll(".carousel-btn").forEach(function (b) {
+    b.addEventListener("click", function () { jump(+b.dataset.dir); });
+  });
+  track.addEventListener("mouseenter", function () { hover = true; });
+  track.addEventListener("mouseleave", function () { hover = false; });
+  track.addEventListener("touchstart", function () { holdUntil = performance.now() + 5000; }, { passive: true });
+  track.addEventListener("focusin", function () { hover = true; });
+  track.addEventListener("focusout", function () { hover = false; });
 })();

@@ -138,7 +138,7 @@ h3 { font-size: 1.2rem; }
 .carousel-btn { width: 52px; height: 52px; border: 1px solid var(--ink); background: transparent; color: var(--ink); display: grid; place-items: center; cursor: pointer; border-radius: 0; }
 .carousel-btn:hover { background: var(--ink); color: #fff; }
 .carousel-btn svg { width: 20px; height: 20px; }
-.carousel { display: grid; grid-auto-flow: column; grid-auto-columns: calc((100% - 32px) / 3); gap: 16px; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; margin-bottom: 36px; }
+.carousel { display: grid; grid-auto-flow: column; grid-auto-columns: calc((100% - 32px) / 3); gap: 16px; overflow-x: auto; scrollbar-width: none; margin-bottom: 36px; }
 .carousel::-webkit-scrollbar { display: none; }
 .carousel:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
 .review { scroll-snap-align: start; margin: 0; background: var(--paper); padding: clamp(24px, 3vw, 40px); display: flex; flex-direction: column; gap: 22px; min-height: 340px; }
