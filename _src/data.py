@@ -273,7 +273,7 @@ SERVICES = [
         "gallery": [
             ("onepiece-carriage-inside", "New carriage-style one-piece garage door with windows, arms and springs on both sides, seen from inside", "Carriage-style door, inside view"),
             ("onepiece-open-inside", "One-piece garage door fully open, seen from inside the garage", "Open, from inside"),
-            ("onepiece-hardware", "New one-piece garage door arms, bracket and extension springs", "Arms & springs"),
+            ("onepiece-springs", "New pair of one-piece garage door extension springs installed", "New springs"),
             ("onepiece-technician", "Sunset Garage Doors technician adjusting one-piece door hardware", "Adjusting the hardware"),
         ],
     },
