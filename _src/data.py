@@ -224,7 +224,6 @@ SERVICES = [
         "gallery": [
             ("newdoor-wood-look-windows", "New wood-look garage door with long top windows on a wood-sided home", "Wood-look, top windows"),
             ("newdoor-white-raised-long", "New white raised long-panel 2-car garage door", "Classic white, long panels"),
-            ("newdoor-frosted-two-doors", "Two new black full-view garage doors with frosted glass", "Frosted glass, 2 doors"),
             ("newdoor-black-glass-outside", "New black aluminum full-view garage door with dark glass", "Black glass, outside view"),
             ("newdoor-white-flush", "New white flush-panel modern garage door", "White flush, modern"),
             ("newdoor-white-flush-window", "New white flush-panel garage door with one side window", "White flush, single window"),
