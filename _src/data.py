@@ -166,6 +166,7 @@ SERVICES = [
         ],
         "image": "opener-liftmaster-belt",
         "gallery": [
+            ("opener-technician-mounting", "Sunset Garage Doors technician drilling to secure a garage door opener mounting bracket", "Securing the opener bracket"),
             ("opener-liftmaster-belt", "LiftMaster belt-drive garage door opener with built-in LED light", "LiftMaster belt drive"),
             ("opener-liftmaster-led", "LiftMaster myQ garage door opener with LED light on a chain rail", "LiftMaster with LED light"),
             ("opener-liftmaster-chain", "LiftMaster chain-drive opener with emergency release cord", "Chain drive & emergency release"),
