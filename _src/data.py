@@ -452,6 +452,13 @@ DOOR_STYLES = [
         "specs": ["24 or 26 gauge steel", "Light or Dark Wood-Like finish", "Raised panel, carriage house or flush", "Non-insulated, Polypack or Steel Back"],
     },
     {
+        "name": "Flush Woodgrain",
+        "image": "newdoor-modern-brown",
+        "alt": "Flush woodgrain garage door with vertical side windows",
+        "text": "Flat, flush panels with a deep woodgrain texture, a modern shape with a natural feel. It looks great with side or top windows and comes in all 8 colors, including the wood-like finishes.",
+        "specs": ["24 gauge steel", "Deep woodgrain texture", "All 8 colors", "Steel Back"],
+    },
+    {
         "name": "Modern Flush",
         "image": "newdoor-white-flush",
         "alt": "White modern flush-panel garage door",
@@ -460,8 +467,8 @@ DOOR_STYLES = [
     },
     {
         "name": "Modern Line",
-        "image": "newdoor-modern-brown",
-        "alt": "Modern garage door in brown woodgrain with long side windows",
+        "image": "newdoor-modern-line-black",
+        "alt": "Black modern garage door with four long horizontal windows stacked on the left side",
         "text": "A flush door with long, narrow windows arranged across or down the door. Many window layouts to choose from, so you can make the door look exactly how you want.",
         "specs": ["24 gauge steel", "Many window layouts", "All 8 colors", "Steel Back"],
     },
