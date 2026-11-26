@@ -483,6 +483,8 @@ DOOR_STYLES = [
 
 DOOR_COLORS = [("White", "white"), ("Almond", "almond"), ("Sandstone", "sandstone"), ("Light Wood-Like", "light-wood-like"), ("Dark Wood-Like", "dark-wood-like"), ("Brown", "brown"), ("Graphite", "graphite"), ("Black", "black")]
 
+MODERN_FINISHES = [("White", "white"), ("Black Satin", "black-satin"), ("Dark Bronze", "dark-bronze"), ("Brushed Nickel", "brushed-nickel")]
+
 INSULATION = [
     ("Non-insulated", "A single layer of steel. The most budget-friendly option, fine for detached garages and storage."),
     ("Polypack", "Polystyrene insulation added behind the steel. Keeps the garage more comfortable and makes the door quieter. Rated R-8."),

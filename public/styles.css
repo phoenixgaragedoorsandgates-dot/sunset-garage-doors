@@ -320,3 +320,5 @@ details[open] .plus::after { transform: rotate(0); }
   .ins-grid { grid-template-columns: 1fr; }
   .style-block .style-row > figure { order: 0 !important; }
 }
+.finish-head { margin: 36px 0 16px; font-size: 1.05rem; }
+.finishes .swatch { aspect-ratio: 406 / 107; }

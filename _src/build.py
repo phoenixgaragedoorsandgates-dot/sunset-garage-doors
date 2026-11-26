@@ -5,7 +5,7 @@ import sys
 from html import escape as e
 
 sys.path.insert(0, os.path.dirname(__file__))
-from data import SITE, BIZ, BRANDS, CITIES, REVIEWS, FAQS, SERVICES, GALLERY, DOOR_STYLES, DOOR_COLORS, INSULATION, GLASS, STYLE_FAQS  # noqa: E402
+from data import SITE, BIZ, BRANDS, CITIES, REVIEWS, FAQS, SERVICES, GALLERY, DOOR_STYLES, DOOR_COLORS, MODERN_FINISHES, INSULATION, GLASS, STYLE_FAQS  # noqa: E402
 from posts import POSTS  # noqa: E402
 
 ROOT = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "public")
@@ -540,6 +540,7 @@ def door_styles_page():
   </div>
 </section>"""
     colors = "".join(f'<li><img class="swatch" src="/images/colors/{f}.jpg" alt="{e(c)} garage door color sample" loading="lazy" width="500" height="500">{e(c)}</li>' for c, f in DOOR_COLORS)
+    finishes = "".join(f'<li><img class="swatch" src="/images/finishes/{f}.jpg" alt="{e(c)} Modern Flush Smooth garage door finish" loading="lazy" width="406" height="107">{e(c)}</li>' for c, f in MODERN_FINISHES)
     ins = "".join(f'<div class="ins"><h3>{e(n)}</h3><p>{e(t)}</p></div>' for n, t in INSULATION)
     glass = "".join(f'<li><img class="swatch" src="/images/glass/{f}.jpg" alt="{e(g)} garage door window glass sample" loading="lazy" width="300" height="300">{e(g)}</li>' for g, f in GLASS)
     n = len(DOOR_STYLES)
@@ -561,7 +562,7 @@ def door_styles_page():
     {label(ROMAN[n], "Colors")}
     <div class="two-col">
       <h2 class="h-md">8 colors to match your home</h2>
-      <div><ul class="colors">{colors}</ul><p class="body-note">Colors on a screen can look different in person. Ask us to bring samples when we come out.</p></div>
+      <div><ul class="colors">{colors}</ul><h3 class="finish-head">Modern Flush Smooth finishes</h3><ul class="colors finishes">{finishes}</ul><p class="body-note">Colors on a screen can look different in person. Ask us to bring samples when we come out.</p></div>
     </div>
   </div>
 </section>
