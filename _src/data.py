@@ -227,6 +227,11 @@ SERVICES = [
             ("newdoor-modern-black", "New black modern garage door with long side windows", "Modern black"),
             ("newdoor-frosted-inside", "Two new full-view garage doors with frosted glass, seen from inside", "Frosted glass, inside view"),
             ("door-double-woodgrain", "New double garage door with dark wood-grain finish and top windows", "Dark wood-grain, top windows"),
+            ("newdoor-carriage-hardware", "New carriage-house garage door with arched windows and black decorative hinges and handles", "Carriage house, decorative hardware"),
+            ("newdoor-black-left-windows", "New black wood-grain flush garage door with long windows on the left", "Black flush, left windows"),
+            ("newdoor-white-raised-panel", "New white raised-panel garage door with top windows", "Classic white, top windows"),
+            ("newdoor-white-flush-arched", "New white flush-panel garage door fitted in an arched opening", "White flush, arched opening"),
+            ("newdoor-black-glass-inside", "New black full-view glass garage door seen from inside", "Black glass, inside view"),
         ],
     },
     {
