@@ -43,6 +43,8 @@ REVIEWS = [
 FAQS = [
     ("What areas do you serve?",
      "We're based at 507 W Foothill Blvd in Monrovia and serve homes within about 20 miles, including Arcadia, Duarte, Sierra Madre, Pasadena, Azusa, Glendora, Temple City, San Gabriel, El Monte, West Covina and the rest of the San Gabriel Valley."),
+    ("Do you offer same-day service?",
+     "Yes. For most repairs like broken springs, off-track doors and opener problems, we can usually come out the same day. Call or text (626) 606-9766 and we'll give you the earliest time available."),
     ("What are your hours?",
      "Sunday through Thursday 7:00 AM to 10:00 PM, Friday 7:00 AM to 5:00 PM. We're closed Saturday."),
     ("Are you licensed?",
@@ -89,7 +91,7 @@ SERVICES = [
         "slug": "garage-door-spring-replacement",
         "name": "Spring Replacement",
         "title": "Garage Door Spring Replacement in Monrovia, CA",
-        "summary": "Broken torsion and extension springs replaced and balanced.",
+        "summary": "Broken torsion and extension springs replaced and balanced, often the same day.",
         "intro": [
             "A broken spring is the most common garage door repair we do. Springs do the heavy lifting; your opener just guides the door. When one snaps, the door suddenly becomes too heavy to open.",
             "We replace torsion and extension springs, match them to your door's weight, and balance the door so it moves smoothly and your opener isn't strained. Covered by our 1-year repair warranty.",
@@ -119,7 +121,7 @@ SERVICES = [
         "slug": "garage-door-off-track-repair",
         "name": "Off-Track Repair",
         "title": "Garage Door Off-Track Repair in Monrovia, CA",
-        "summary": "Doors that jumped the track realigned and secured.",
+        "summary": "Doors that jumped the track realigned and secured, often the same day.",
         "intro": [
             "A door that has come off its track can fall or jam and is dangerous to operate. If your door is crooked, hanging, or the rollers have popped out of the track, stop using it and keep people and cars away.",
             "We put the door back on track, straighten or replace bent track sections, and fix whatever caused it in the first place.",

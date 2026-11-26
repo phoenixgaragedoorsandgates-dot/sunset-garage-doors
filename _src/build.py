@@ -36,7 +36,7 @@ def business_schema():
         "logo": SITE + "/images/logo.png",
         "image": [SITE + "/images/og.jpg", SITE + "/images/door-double-woodgrain.jpg"],
         "telephone": "+1-626-606-9766",
-        "description": f"Licensed garage door repair and installation company in Monrovia, CA (license #{BIZ['license']}). Spring replacement, opener repair and installation, off-track repair, one-piece doors, new garage doors and commercial garage doors (20, 22 and 24 gauge steel) across the San Gabriel Valley.",
+        "description": f"Licensed garage door repair and installation company in Monrovia, CA (license #{BIZ['license']}) offering same-day service. Spring replacement, opener repair and installation, off-track repair, one-piece doors, new garage doors and commercial garage doors (20, 22 and 24 gauge steel) across the San Gabriel Valley.",
         "address": {"@type": "PostalAddress", "streetAddress": BIZ["street"], "addressLocality": BIZ["city"], "addressRegion": BIZ["region"], "postalCode": BIZ["zip"], "addressCountry": "US"},
         "geo": {"@type": "GeoCoordinates", "latitude": BIZ["lat"], "longitude": BIZ["lng"]},
         "hasMap": BIZ["google"],
@@ -281,7 +281,7 @@ def home():
     <p class="kicker">Garage door repair &amp; installation · Monrovia, California</p>
     <h1 class="h-xl">Garage door repair in Monrovia, done right the first time.</h1>
     <div class="hero-sub">
-      <p class="lead">Broken springs, off-track doors, openers and new garage doors for homes and businesses across the San Gabriel Valley. Licensed, local, and backed by a written warranty on every job.</p>
+      <p class="lead">Broken springs, off-track doors, openers and new garage doors for homes and businesses across the San Gabriel Valley. Same-day service available. Licensed, local, and backed by a written warranty on every job.</p>
       <div class="btn-row">
         <a class="btn btn-accent" href="tel:{TEL}">{ICON["phone"]}Call {PHONE}</a>
         <a class="btn btn-dark" href="sms:{TEL}">{ICON["text"]}Text Us</a>
@@ -292,6 +292,7 @@ def home():
   <div class="wrap facts">
     <div><span class="fact-k">Licensed &amp; insured</span><span class="fact-v">#{BIZ["license"]}</span></div>
     <div><span class="fact-k">In business</span><span class="fact-v">{BIZ["years"]} years</span></div>
+    <div><span class="fact-k">Service</span><span class="fact-v">Same day</span></div>
     <div><span class="fact-k">Repair warranty</span><span class="fact-v">1 year</span></div>
     <div><span class="fact-k">Install warranty</span><span class="fact-v">3 years</span></div>
   </div>
@@ -380,7 +381,7 @@ def home():
 """
     faqs = faq_schema(FAQS)
     return page("/", "Garage Door Repair & Installation in Monrovia, CA | Sunset Garage Doors",
-                f"Licensed garage door repair, spring replacement, opener repair and new garage door installation in Monrovia and the San Gabriel Valley. 1-year repair and 3-year install warranty. Call {PHONE}.",
+                f"Same-day garage door repair, spring replacement, opener repair and new garage door installation in Monrovia and the San Gabriel Valley. Licensed, 1-year repair and 3-year install warranty. Call {PHONE}.",
                 body, schemas=[faqs])
 
 
@@ -448,6 +449,7 @@ def service_page(s):
     <div class="facts facts-inline">
       <div><span class="fact-k">Licensed &amp; insured</span><span class="fact-v">#{BIZ["license"]}</span></div>
       <div><span class="fact-k">In business</span><span class="fact-v">{BIZ["years"]} years</span></div>
+      <div><span class="fact-k">Service</span><span class="fact-v">Same day</span></div>
       <div><span class="fact-k">Repair warranty</span><span class="fact-v">1 year</span></div>
       <div><span class="fact-k">Install warranty</span><span class="fact-v">3 years</span></div>
     </div>
@@ -753,6 +755,7 @@ def llms_txt():
         f"- Phone (call or text): {PHONE}",
         f"- Address: {BIZ['street']}, {BIZ['city']}, {BIZ['region']} {BIZ['zip']}",
         f"- Hours: {hours}",
+        "- Same-day service available for repairs",
         "- Warranty: 1 year on all repairs, 3 years on all installations",
         "- Financing: available through Acorn Finance",
         f"- Brands installed: {', '.join(BRANDS)}",
