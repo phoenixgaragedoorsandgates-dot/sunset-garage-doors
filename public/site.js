@@ -26,18 +26,18 @@
         if (userMoved) return;
         var k = Math.min((now - t0) / dur, 1);
         var e = k < 0.5 ? 4 * k * k * k : 1 - Math.pow(-2 * k + 2, 3) / 2;
-        window.scrollTo({ top: start + (y() - start) * e, behavior: "instant" });
+        window.scrollTo(0, start + (y() - start) * e);
         if (k < 1) requestAnimationFrame(glide);
       })(t0);
       return;
     }
     // Page opened with #section in the address: jump, then follow late layout shifts.
-    window.scrollTo({ top: y(), behavior: "instant" });
+    window.scrollTo(0, y());
     var lastT = y();
     (function follow() {
       if (userMoved || performance.now() > until) return;
       var t = y();
-      if (Math.abs(t - lastT) > 2) { lastT = t; window.scrollTo({ top: t, behavior: "instant" }); }
+      if (Math.abs(t - lastT) > 2) { lastT = t; window.scrollTo(0, t); }
       requestAnimationFrame(follow);
     })();
   }
