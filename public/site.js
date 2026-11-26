@@ -11,7 +11,7 @@
     var until = performance.now() + 4000, userMoved = false;
     // Skip the section's empty top padding: land on its label/heading instead.
     var anchor = el.querySelector(".label, h1, h2") || el;
-    var extra = anchor === el ? 0 : 20;
+    var extra = anchor === el ? 0 : 56;
     function y() { return anchor.getBoundingClientRect().top + window.pageYOffset - headerOffset() - extra; }
     function stop() { userMoved = true; }
     window.addEventListener("wheel", stop, { once: true, passive: true });
