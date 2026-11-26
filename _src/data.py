@@ -14,6 +14,9 @@ BIZ = {
     "license": "1136120",
     "years": 6,
     "google": "https://maps.app.goo.gl/CKL2Y9rbQw3FU8xd6",
+    "instagram": "https://www.instagram.com/sunset_garagedoors/",
+    "facebook": "https://www.facebook.com/profile.php?id=61593373165234",
+    "yelp": "https://www.yelp.com/biz/sunset-garage-doors-monrovia",
     "hours_text": [("Sunday – Thursday", "7:00 AM – 10:00 PM"), ("Friday", "7:00 AM – 5:00 PM"), ("Saturday", "Closed")],
 }
 

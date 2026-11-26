@@ -39,7 +39,7 @@ def business_schema():
         "address": {"@type": "PostalAddress", "streetAddress": BIZ["street"], "addressLocality": BIZ["city"], "addressRegion": BIZ["region"], "postalCode": BIZ["zip"], "addressCountry": "US"},
         "geo": {"@type": "GeoCoordinates", "latitude": BIZ["lat"], "longitude": BIZ["lng"]},
         "hasMap": BIZ["google"],
-        "sameAs": [BIZ["google"]],
+        "sameAs": [BIZ["google"], BIZ["instagram"], BIZ["facebook"], BIZ["yelp"]],
         "areaServed": [{"@type": "City", "name": f"{c}, CA"} for c in CITIES],
         "openingHoursSpecification": [
             {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday"], "opens": "07:00", "closes": "22:00"},
@@ -125,6 +125,7 @@ def page(path, title, description, body, schemas=(), og_image="og", active=""):
         <div>{e(BIZ["street"])}<br>{BIZ["city"]}, {BIZ["region"]} {BIZ["zip"]}</div>
         <div><a href="tel:{TEL}">{PHONE}</a></div>
         <div>CA License #{BIZ["license"]}</div>
+        {social_links()}
       </div>
       <div class="footer-col"><strong>Hours</strong>{hours}</div>
       <div class="footer-col footer-links"><strong>Services</strong>{svc_links}</div>
@@ -141,6 +142,22 @@ def page(path, title, description, body, schemas=(), og_image="og", active=""):
 </body>
 </html>
 """
+
+
+SOCIAL_ICONS = {
+    "instagram": '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="1.7"/><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.7"/><circle cx="17.4" cy="6.6" r="1.1" fill="currentColor"/></svg>',
+    "facebook": '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M13.5 21v-7.5h2.6l.4-3h-3V8.6c0-.9.3-1.5 1.6-1.5h1.6V4.4c-.3 0-1.2-.1-2.3-.1-2.3 0-3.9 1.4-3.9 4v2.2H8v3h2.5V21z"/></svg>',
+    "yelp": '<svg viewBox="0 0 24 24" aria-hidden="true"><g fill="currentColor"><path d="M10.6 2.3c-.9-.2-3.3.5-3.9 1.1-.3.3-.3.7-.1 1l4.1 7.1c.4.7 1.5.4 1.5-.4V3.3c0-.5-.3-.8-.7-.9z"/><path d="M5.5 13.9l3.7-1.1c.8-.2.8-1.3 0-1.6L5.6 9.8c-.4-.2-.9 0-1 .5-.3 1-.3 2.3 0 3.1.1.4.5.6.9.5z"/><path d="M6.9 19.3c.7.7 1.9 1.4 2.8 1.6.4.1.8-.2.8-.6l.2-3.9c0-.8-1-1.2-1.5-.6l-2.4 2.8c-.2.3-.2.5.1.7z"/><path d="M13.6 15.8l2 3.3c.2.4.7.5 1 .2.9-.6 1.7-1.6 2-2.6.1-.4-.1-.8-.5-.9l-3.6-1.2c-.8-.3-1.4.6-.9 1.2z"/><path d="M14.3 12.9l3.7-1c.4-.1.6-.5.5-.9-.3-1-1-2.1-1.8-2.7-.3-.3-.8-.2-1 .1l-2.2 3.2c-.4.7.2 1.5.8 1.3z"/></g></svg>',
+    "google": '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" d="M19.5 12.2h-7.2M19.5 12.2a7.5 7.5 0 1 1-2.2-5.4"/></svg>',
+}
+SOCIAL_LABELS = {"instagram": "Instagram", "facebook": "Facebook", "yelp": "Yelp", "google": "Google reviews"}
+
+
+def social_links(extra_class=""):
+    items = "".join(
+        f'<a class="social-link" href="{BIZ[k]}" target="_blank" rel="noopener" aria-label="Sunset Garage Doors on {SOCIAL_LABELS[k]}" title="{SOCIAL_LABELS[k]}">{SOCIAL_ICONS[k]}</a>'
+        for k in ("instagram", "facebook", "yelp", "google"))
+    return f'<div class="social {extra_class}">{items}</div>'
 
 
 def label(n, text):
@@ -505,7 +522,7 @@ def contact_page():
       <div><h3>Address</h3><p>{e(BIZ["street"])}<br>{BIZ["city"]}, {BIZ["region"]} {BIZ["zip"]}</p></div>
       <div><h3>Hours</h3><ul class="hours">{hours}</ul></div>
       <div><h3>License</h3><p>California Contractor #{BIZ["license"]}</p></div>
-      <div><h3>Reviews</h3><a class="link-arrow" href="{BIZ["google"]}" target="_blank" rel="noopener">Google {ICON["arrow"]}</a></div>
+      <div><h3>Follow &amp; review us</h3>{social_links()}</div>
     </div>
   </div>
 </section>
@@ -602,6 +619,9 @@ def llms_txt():
         f"- Brands installed: {', '.join(BRANDS)}",
         f"- Cities served: {', '.join(CITIES)}",
         f"- Google reviews: {BIZ['google']}",
+        f"- Instagram: {BIZ['instagram']}",
+        f"- Facebook: {BIZ['facebook']}",
+        f"- Yelp: {BIZ['yelp']}",
         "",
         "## Services",
         "",
