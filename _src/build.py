@@ -450,7 +450,7 @@ def areas_page():
     {service_rows(SERVICES)}
   </div>
 </section>
-<section class="map-wrap"><iframe title="Map of Sunset Garage Doors in Monrovia, CA" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=507%20W%20Foothill%20Blvd%20B%2C%20Monrovia%2C%20CA%2091016&z=11&output=embed"></iframe></section>
+<section class="map-wrap"><iframe title="Map of Sunset Garage Doors in Monrovia, CA" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=Sunset%20Garage%20Doors%2C%20507%20W%20Foothill%20Blvd%20Unit%20B%2C%20Monrovia%2C%20CA%2091016&z=11&output=embed"></iframe></section>
 {cta_block()}"""
     return page("/service-areas/", "Service Areas: Monrovia, Arcadia, Pasadena & More | Sunset Garage Doors",
                 "Garage door repair and installation in Monrovia, Arcadia, Duarte, Sierra Madre, Pasadena, Azusa, Glendora, Temple City, El Monte and across the San Gabriel Valley.",
@@ -499,7 +499,7 @@ def contact_page():
     </div>
   </div>
 </section>
-<section class="map-wrap"><iframe title="Map to Sunset Garage Doors, 507 W Foothill Blvd, Monrovia" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=507%20W%20Foothill%20Blvd%20B%2C%20Monrovia%2C%20CA%2091016&z=14&output=embed"></iframe></section>"""
+<section class="map-wrap"><iframe title="Map to Sunset Garage Doors, 507 W Foothill Blvd, Monrovia" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=Sunset%20Garage%20Doors%2C%20507%20W%20Foothill%20Blvd%20Unit%20B%2C%20Monrovia%2C%20CA%2091016&z=14&output=embed"></iframe></section>"""
     return page("/contact/", "Contact | Sunset Garage Doors, Monrovia CA",
                 f"Call or text Sunset Garage Doors at {PHONE}. 507 W Foothill Blvd, Unit B, Monrovia, CA 91016. Open Sunday–Thursday 7am–10pm, Friday 7am–5pm.",
                 body, schemas=[crumbs_schema([("Home", "/"), ("Contact", "/contact/")])], active="/contact/")
