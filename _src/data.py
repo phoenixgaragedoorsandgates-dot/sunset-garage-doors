@@ -381,6 +381,24 @@ SERVICES = [
     },
 ]
 
+# Display order of services (edit this list to reorder everywhere on the site)
+SERVICE_ORDER = [
+    "garage-door-repair",
+    "garage-door-spring-replacement",
+    "garage-door-opener-repair",
+    "garage-door-off-track-repair",
+    "new-garage-door-installation",
+    "garage-door-cable-drum-repair",
+    "garage-door-opener-installation",
+    "garage-door-roller-hinge-replacement",
+    "commercial-garage-door-installation",
+    "one-piece-garage-doors",
+    "garage-door-reinforcement",
+    "garage-door-remotes-keypads",
+]
+assert sorted(SERVICE_ORDER) == sorted(x["slug"] for x in SERVICES)
+SERVICES.sort(key=lambda x: SERVICE_ORDER.index(x["slug"]))
+
 GALLERY = [
     ("door-double-woodgrain", "Double garage door, dark wood-grain finish with top windows", "Double Door Installation"),
     ("door-single-woodgrain", "Single garage door, dark wood-grain finish with windows", "Single Door Installation"),
