@@ -271,7 +271,7 @@ def home():
 <section class="hero">
   <div class="wrap">
     <p class="kicker">Garage door repair &amp; installation · Monrovia, California</p>
-    <h1 class="h-xl">Garage doors, fixed right.<br>Installed to last.</h1>
+    <h1 class="h-xl">Garage door repair in Monrovia, done right the first time.</h1>
     <div class="hero-sub">
       <p class="lead">Broken springs, off-track doors, openers and new garage doors for homes and businesses across the San Gabriel Valley. Licensed, local, and backed by a written warranty on every job.</p>
       <div class="btn-row">
