@@ -1,6 +1,47 @@
 (function () {
   document.querySelectorAll(".yr").forEach(function (el) { el.textContent = new Date().getFullYear(); });
 
+  // Land exactly on #section links. Photos and fonts above the section can
+  // finish loading while (or after) the page scrolls and push it down, so we
+  // keep re-aligning for a moment until the layout settles.
+  function headerOffset() { var h = document.querySelector(".site-header"); return (h ? h.offsetHeight : 0) + 12; }
+  function settleOn(id, smooth) {
+    var el = document.getElementById(id);
+    if (!el) return;
+    var until = performance.now() + 2500, userMoved = false;
+    function y() { return el.getBoundingClientRect().top + window.pageYOffset - headerOffset(); }
+    function stop() { userMoved = true; }
+    window.addEventListener("wheel", stop, { once: true, passive: true });
+    window.addEventListener("touchstart", stop, { once: true, passive: true });
+    window.scrollTo({ top: y(), behavior: smooth ? "smooth" : "instant" });
+    var lastTarget = y();
+    (function check() {
+      if (userMoved || performance.now() > until) return;
+      var t = y();
+      if (Math.abs(t - lastTarget) > 2) { lastTarget = t; window.scrollTo({ top: t, behavior: "instant" }); }
+      else if (!smooth && Math.abs(window.pageYOffset - t) > 2 && Math.abs(window.pageYOffset - t) < 4000) window.scrollTo({ top: t, behavior: "instant" });
+      requestAnimationFrame(check);
+    })();
+  }
+  document.addEventListener("click", function (e) {
+    var a = e.target.closest && e.target.closest("a[href*='#']");
+    if (!a) return;
+    var url = new URL(a.href, location.href);
+    if (url.pathname !== location.pathname || !url.hash) return;
+    var id = decodeURIComponent(url.hash.slice(1));
+    if (!document.getElementById(id)) return;
+    e.preventDefault();
+    history.pushState(null, "", url.hash);
+    settleOn(id, true);
+  });
+  if (location.hash) {
+    var startId = decodeURIComponent(location.hash.slice(1));
+    if ("scrollRestoration" in history) history.scrollRestoration = "manual";
+    settleOn(startId, false);
+    window.addEventListener("load", function () { settleOn(startId, false); });
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(function () { settleOn(startId, false); });
+  }
+
   // Mobile menu
   var btn = document.querySelector(".menu-btn");
   var mnav = document.getElementById("mnav");
