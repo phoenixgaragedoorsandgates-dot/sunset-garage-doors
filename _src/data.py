@@ -219,7 +219,15 @@ SERVICES = [
             ("Can I get financing on a new garage door?", "Yes, through Acorn Finance. Call us and we'll walk you through it."),
             ("Can you replace my old one-piece door with a sectional door?", "In many garages, yes. We'll look at your opening and tell you what fits."),
         ],
-        "image": "door-double-woodgrain",
+        "image": "newdoor-woodgrain-panels",
+        "gallery_title": "New doors we've installed",
+        "gallery": [
+            ("newdoor-full-view-white", "New full-view glass garage door with white aluminum frame", "Full-view glass, white frame"),
+            ("newdoor-modern-brown", "New modern flush garage door in brown wood-grain with vertical side windows", "Modern flush, side windows"),
+            ("newdoor-modern-black", "New black modern garage door with long side windows", "Modern black"),
+            ("newdoor-frosted-inside", "Two new full-view garage doors with frosted glass, seen from inside", "Frosted glass, inside view"),
+            ("door-double-woodgrain", "New double garage door with dark wood-grain finish and top windows", "Dark wood-grain, top windows"),
+        ],
     },
     {
         "slug": "commercial-garage-door-installation",
