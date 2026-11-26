@@ -300,6 +300,7 @@ SERVICES = [
         "gallery": [
             ("hinge-roller-closeup", "Heavy-duty 14-gauge garage door hinge with a nylon roller in the track", "14-gauge hinge & nylon roller"),
             ("roller-old-vs-new", "New white nylon garage door roller next to a worn black roller", "New nylon roller vs. worn old roller"),
+            ("hinge-roller-track", "Garage door hinge and nylon roller riding in the side track", "Hinge & roller in the track"),
         ],
     },
     {
