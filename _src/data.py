@@ -304,6 +304,33 @@ SERVICES = [
         ],
     },
     {
+        "slug": "garage-door-cable-drum-repair",
+        "name": "Cables & Drums",
+        "title": "Garage Door Cable & Drum Repair in Monrovia, CA",
+        "summary": "Frayed or snapped lift cables and worn drums replaced.",
+        "intro": [
+            "Lift cables run from the bottom of your garage door up to the drums on the spring shaft. Together with the springs, they raise and lower the door evenly. When a cable frays, snaps or slips off its drum, the door can hang crooked, jam or come off track.",
+            "We replace worn or broken cables and drums, re-seat cables on the drums and balance the door so both sides lift evenly. Covered by our 1-year repair warranty.",
+        ],
+        "signs": [
+            "A cable is frayed, rusty or has broken strands",
+            "A cable is loose, hanging or has come off the drum",
+            "The door is crooked or one side is lower than the other",
+            "The door jerks or makes a snapping sound",
+            "A spring recently broke (cables often get damaged too)",
+        ],
+        "what": "Cables are under a lot of tension from the springs. Don't try to re-thread or replace them yourself. Keep the door closed and call us.",
+        "faqs": [
+            ("Why did my garage door cable come off the drum?", "Common causes are a broken spring, a door that hit something while closing, worn cables, or the door being pulled down unevenly. We re-seat or replace the cable and fix whatever caused it."),
+            ("Should both cables be replaced at once?", "Usually, yes. Both cables wear at the same rate, so if one is frayed or broken, the other is often close behind."),
+        ],
+        "image": "cable-drum",
+        "gallery_title": "Cables & drums",
+        "gallery": [
+            ("cable-frayed", "Snapped and frayed garage door lift cable", "Snapped, frayed cable"),
+        ],
+    },
+    {
         "slug": "garage-door-reinforcement",
         "name": "Door Reinforcement",
         "title": "Garage Door Reinforcement in Monrovia, CA",
