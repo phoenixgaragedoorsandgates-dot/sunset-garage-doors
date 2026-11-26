@@ -102,7 +102,7 @@
   var marquee = document.querySelector(".marquee");
   if (marquee) {
     var mTrack = marquee.querySelector(".marquee-track");
-    loopCarousel(marquee, function () { return mTrack.offsetWidth + 16; }, 35);
+    loopCarousel(marquee, function () { return mTrack.offsetWidth + 16; }, 90);
   }
 
   // Reviews carousel
@@ -120,7 +120,7 @@
   var n = originals.length;
   var reviews = loopCarousel(track, function () {
     return track.children[n].offsetLeft - track.children[0].offsetLeft;
-  }, 40);
+  }, 70);
   function cardStep() { var c = track.querySelector(".review"); return c ? c.getBoundingClientRect().width + 16 : 300; }
   document.querySelectorAll(".carousel-btn").forEach(function (b) {
     b.addEventListener("click", function () { reviews.step((+b.dataset.dir) * cardStep()); });
