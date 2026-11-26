@@ -238,7 +238,7 @@ def home():
       </div>
     </div>
   </div>
-  <div class="hero-media"><img src="/images/door-double-woodgrain.jpg" alt="New dark wood-grain double garage door installed by Sunset Garage Doors in the San Gabriel Valley" width="1125" height="844" fetchpriority="high"></div>
+  <div class="hero-media"><img src="/images/hero-home.jpg" alt="Modern home with black full-view glass garage doors at sunset" width="1125" height="750" fetchpriority="high"></div>
   <div class="wrap facts">
     <div><span class="fact-k">License</span><span class="fact-v">CA #{BIZ["license"]}</span></div>
     <div><span class="fact-k">In business</span><span class="fact-v">{BIZ["years"]} years</span></div>
