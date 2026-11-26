@@ -16,25 +16,29 @@
     function stop() { userMoved = true; }
     window.addEventListener("wheel", stop, { once: true, passive: true });
     window.addEventListener("touchstart", stop, { once: true, passive: true });
-    // One smooth scroll. Only after it has fully stopped do we check the
-    // position, and then gently correct (never mid-scroll, which shakes on iPhone).
-    window.scrollTo({ top: y(), behavior: smooth ? "smooth" : "instant" });
-    var lastY = -1, still = 0, tries = 0;
-    (function watch() {
+    if (smooth) {
+      // Our own glide (iPhone's built-in smooth scroll stops a few pixels off,
+      // which forced a visible correction). The target is re-measured every
+      // frame, so anything that loads mid-glide is absorbed without a jump.
+      var start = window.pageYOffset, t0 = performance.now();
+      var dur = Math.min(900, Math.max(350, Math.abs(y() - start) * 0.25));
+      (function glide(now) {
+        if (userMoved) return;
+        var k = Math.min((now - t0) / dur, 1);
+        var e = k < 0.5 ? 4 * k * k * k : 1 - Math.pow(-2 * k + 2, 3) / 2;
+        window.scrollTo({ top: start + (y() - start) * e, behavior: "instant" });
+        if (k < 1) requestAnimationFrame(glide);
+      })(t0);
+      return;
+    }
+    // Page opened with #section in the address: jump, then follow late layout shifts.
+    window.scrollTo({ top: y(), behavior: "instant" });
+    var lastT = y();
+    (function follow() {
       if (userMoved || performance.now() > until) return;
-      var cur = window.pageYOffset;
-      still = Math.abs(cur - lastY) < 1 ? still + 1 : 0;
-      lastY = cur;
-      if (still >= 8) {
-        var t = y();
-        if (Math.abs(cur - t) > 4 && tries < 3) {
-          tries++; still = 0;
-          window.scrollTo({ top: t, behavior: Math.abs(cur - t) > 150 ? "smooth" : "instant" });
-        } else if (Math.abs(cur - t) <= 4) {
-          return;
-        }
-      }
-      requestAnimationFrame(watch);
+      var t = y();
+      if (Math.abs(t - lastT) > 2) { lastT = t; window.scrollTo({ top: t, behavior: "instant" }); }
+      requestAnimationFrame(follow);
     })();
   }
   document.addEventListener("click", function (e) {
