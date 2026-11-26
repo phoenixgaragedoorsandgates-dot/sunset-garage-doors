@@ -220,7 +220,7 @@ SERVICES = [
             ("Can I get financing on a new garage door?", "Yes, through Acorn Finance. Call us and we'll walk you through it."),
             ("Can you replace my old one-piece door with a sectional door?", "In many garages, yes. We'll look at your opening and tell you what fits."),
         ],
-        "image": "newdoor-woodgrain-panels",
+        "image": "newdoor-carriage-hardware",
         "gallery_title": "New doors we've installed",
         "gallery": [
             ("newdoor-full-view-white", "New full-view glass garage door with white aluminum frame", "Full-view glass, white frame"),
@@ -228,6 +228,7 @@ SERVICES = [
             ("newdoor-modern-black", "New black modern garage door with long side windows", "Modern black"),
             ("newdoor-frosted-inside", "Two new full-view garage doors with frosted glass, seen from inside", "Frosted glass, inside view"),
             ("door-double-woodgrain", "New double garage door with dark wood-grain finish and top windows", "Dark wood-grain, top windows"),
+            ("newdoor-woodgrain-panels", "New wood-grain raised-panel garage door with top windows", "Wood-grain, raised panels"),
             ("newdoor-carriage-hardware", "New carriage-house garage door with arched windows and black decorative hinges and handles", "Carriage house, decorative hardware"),
             ("newdoor-black-left-windows", "New black wood-grain flush garage door with long windows on the left", "Black flush, left windows"),
             ("newdoor-white-raised-panel", "New white raised-panel garage door with top windows", "Classic white, top windows"),
