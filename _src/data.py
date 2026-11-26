@@ -336,23 +336,27 @@ SERVICES = [
     {
         "slug": "garage-door-reinforcement",
         "name": "Door Reinforcement",
-        "title": "Garage Door Reinforcement in Monrovia, CA",
-        "summary": "Struts and bracing that stop sagging and protect your door.",
+        "title": "Garage Door Reinforcement & Struts in Monrovia, CA",
+        "summary": "Garage door struts that straighten and strengthen bent, sagging panels.",
         "intro": [
-            "Wide doors and lightweight panels can bow or sag over time, especially the top section where the opener pulls. Reinforcement struts add strength so the door stays straight.",
-            "We install struts and bracing on the sections that need it and check the rest of the door while we're there.",
+            "Wide doors and lightweight panels can bend, bow or sag over time, especially the top section where the opener pulls. A cracked or bent panel also weakens the whole door.",
+            "The fix is a garage door strut: a long steel brace bolted across the inside of a panel. Struts reinforce bent doors, keep sections straight, and stop the damage from getting worse.",
+            "We install struts on the sections that need them and check the rest of the door while we're there.",
         ],
         "signs": [
+            "A panel is bent, buckled or cracked",
             "The top panel is bending where the opener arm attaches",
             "Panels sag in the middle",
             "The door flexes or bows when it moves",
             "You added a heavier opener or windows",
         ],
-        "what": "Reinforcement is a small job that can add years to a door's life.",
+        "what": "Adding struts is a small job that can add years to a door's life, and it often costs far less than replacing a panel or the whole door.",
         "faqs": [
+            ("What is a garage door strut?", "A strut is a steel brace that bolts horizontally across the inside of a garage door section. It reinforces the panel so it can't bend or sag, and it's used to strengthen doors that are already bent."),
             ("Why is the top of my garage door bending?", "The opener pulls on the top section every time the door moves. Without a strut, that section can bend over time. A reinforcement strut fixes it."),
+            ("Can a bent garage door panel be fixed with a strut?", "Often, yes. If the panel is bent but not torn apart, a strut can straighten and reinforce it. If the panel is badly cracked or split, it may need to be replaced, and we'll tell you which makes sense."),
         ],
-        "image": "technician-installing",
+        "image": "reinforcement-bent-panel",
     },
     {
         "slug": "garage-door-remotes-keypads",
