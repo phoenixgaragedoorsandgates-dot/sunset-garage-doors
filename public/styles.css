@@ -297,3 +297,4 @@ details[open] .plus::after { transform: rotate(0); }
 .social-link:hover, .social-link:focus-visible { background: var(--accent); border-color: var(--accent); color: #fff; }
 .mnav .mnav-social { margin-top: 20px; gap: 12px; }
 .mnav .mnav-social a { padding: 0; border: 1px solid var(--rule); font-size: inherit; width: 44px; height: 44px; }
+.about-media img { width: 100%; height: auto; margin-top: clamp(24px, 3vw, 40px); }

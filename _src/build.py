@@ -293,7 +293,10 @@ def home():
   <div class="wrap">
     {label("II", "About")}
     <div class="two-col">
-      <h2 class="h-md">Local to Monrovia</h2>
+      <div class="about-media">
+        <h2 class="h-md">Local to Monrovia</h2>
+        <img src="/images/white-garage-door-home.jpg" alt="White raised-panel garage door on a gray stucco home with lantern lights" loading="lazy" width="1500" height="1000">
+      </div>
       <div class="prose-lg">
         <p>Sunset Garage Doors has fixed and installed garage doors across the San Gabriel Valley for {BIZ["years"]} years, from our shop on Foothill Blvd in Monrovia.</p>
         <p>We explain exactly what's wrong, fix it properly, and put our warranty in writing: one year on every repair, three years on every installation.</p>
