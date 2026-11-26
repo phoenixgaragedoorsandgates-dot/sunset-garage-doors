@@ -254,10 +254,10 @@ SERVICES = [
         "slug": "one-piece-garage-doors",
         "name": "One-Piece Doors",
         "title": "One-Piece Garage Door Repair & Installation in Monrovia, CA",
-        "summary": "Tilt-up door repair and new one-piece door installation.",
+        "summary": "Tilt-up door repair, new installs, and doors custom-built on site.",
         "intro": [
             "Many older homes in the San Gabriel Valley still have one-piece (tilt-up) garage doors that swing out as a single panel. They use different springs, hardware and arms than sectional doors, and not every company works on them. We do.",
-            "We repair one-piece doors and install new ones. If you'd rather switch to a sectional door, we can tell you whether your opening allows it.",
+            "We repair one-piece doors and install new ones. Because one-piece openings come in all sizes, we also custom-build one-piece doors right on site, framed to fit your exact opening. If you'd rather switch to a sectional door, we can tell you whether your opening allows it.",
         ],
         "signs": [
             "The door is very heavy or won't stay open",
@@ -267,10 +267,12 @@ SERVICES = [
         ],
         "what": "Repairs are covered for 1 year and new installations for 3 years.",
         "faqs": [
+            ("Can you build a one-piece door to fit my opening?", "Yes. We custom-make one-piece doors on site, building the frame to the exact size of your garage opening, then install it with new arms and springs."),
             ("Are one-piece doors still worth repairing?", "Often, yes. Springs and hardware can usually be replaced. If the door itself is rotted or warped, replacement usually makes more sense, and we'll give you both options."),
         ],
         "image": "onepiece-open-outside",
         "gallery": [
+            ("onepiece-custom-build", "One-piece garage door being custom-built on site with a steel frame and window panels", "Custom-built on site"),
             ("onepiece-carriage-inside", "New carriage-style one-piece garage door with windows, arms and springs on both sides, seen from inside", "Carriage-style door, inside view"),
             ("onepiece-open-inside", "One-piece garage door fully open, seen from inside the garage", "Open, from inside"),
             ("onepiece-springs", "New pair of one-piece garage door extension springs installed", "New springs"),
