@@ -427,3 +427,67 @@ GALLERY = [
     ("newdoor-black-glass-inside", "New black full-view glass garage door seen from inside", "Black Glass, Inside View"),
     ("door-double-woodgrain", "Double garage door, dark wood-grain finish with top windows", "2-Car Garage Door Installation"),
 ]
+
+# ---------- Door Styles page ----------
+DOOR_STYLES = [
+    {
+        "name": "Classic Raised Panel",
+        "image": "newdoor-white-raised-long",
+        "alt": "White classic raised long-panel garage door installed by Sunset Garage Doors",
+        "text": "The traditional look most homes in the San Gabriel Valley were built with. Available in short panels (more squares, a busier look) or long panels (clean, wide rectangles), with or without a row of windows on top.",
+        "specs": ["24 gauge steel", "Short or long panels", "All 8 colors", "Non-insulated, Polypack or Steel Back"],
+    },
+    {
+        "name": "Carriage House",
+        "image": "newdoor-carriage-hardware",
+        "alt": "Carriage house garage door with arched windows and black decorative hinges and handles",
+        "text": "Styled like old swing-out barn doors, with grooved panels, decorative hinges and handles, and optional arched or square windows. A popular upgrade that adds a lot of curb appeal.",
+        "specs": ["24 gauge steel", "Short or long panels", "Decorative hinges, handles and knockers", "Non-insulated, Polypack or Steel Back"],
+    },
+    {
+        "name": "Wood-Look",
+        "image": "newdoor-wood-look-windows",
+        "alt": "Wood-look steel garage door with long top windows",
+        "text": "The warmth of real wood without the upkeep. A deep woodgrain texture with a light or dark wood finish on steel, so it won't rot, warp or need re-staining. Available in carriage house, raised panel and flush styles.",
+        "specs": ["24 or 26 gauge steel", "Woodlike Light or Woodlike Dark", "Raised panel, carriage house or flush", "Non-insulated, Polypack or Steel Back"],
+    },
+    {
+        "name": "Modern Flush",
+        "image": "newdoor-white-flush",
+        "alt": "White modern flush-panel garage door",
+        "text": "Smooth, flat panels with clean horizontal lines, a great match for modern and mid-century homes. Add a single side window, a vertical stack of windows, or keep it solid.",
+        "specs": ["24 gauge steel", "Smooth or woodgrain texture", "Optional long or side windows", "Steel Back"],
+    },
+    {
+        "name": "Modern Line",
+        "image": "newdoor-modern-brown",
+        "alt": "Modern garage door in brown woodgrain with long side windows",
+        "text": "A flush door with long, narrow windows arranged across or down the door. Many window layouts to choose from, so you can make the door look exactly how you want.",
+        "specs": ["24 gauge steel", "Many window layouts", "All 8 colors", "Steel Back"],
+    },
+    {
+        "name": "Full-View Glass",
+        "image": "newdoor-black-glass-outside",
+        "alt": "Black aluminum full-view glass garage door",
+        "text": "Aluminum frames with large glass panels. Choose clear, frosted, tinted or obscure glass for the look and privacy you want. A bold modern statement that also lets light into the garage.",
+        "specs": ["Aluminum frame", "Black, white, bronze or nickel frames", "Clear, frosted, tinted or obscure glass", "Many frame layouts"],
+    },
+]
+
+DOOR_COLORS = ["White", "Almond", "Sandstone", "Woodlike Light", "Woodlike Dark", "Brown", "Graphite Texture", "Black"]
+
+INSULATION = [
+    ("Non-insulated", "A single layer of steel. The most budget-friendly option, fine for detached garages and storage."),
+    ("Polypack", "Polystyrene insulation added behind the steel. Keeps the garage more comfortable and makes the door quieter."),
+    ("Steel Back", "A 2\" thick, 3-layer sandwich: steel outside, insulation in the middle, steel inside. The strongest, quietest and best-insulated option. Rated R-10."),
+]
+
+GLASS = ["Clear", "Frosted", "Obscure", "Tinted", "White laminated", "Black laminated"]
+
+STYLE_FAQS = [
+    ("What does R-value mean?", "R-value measures how well insulation slows heat moving through the door. The higher the number, the better it insulates. Our insulated Steel Back doors are rated R-10, which keeps an attached garage noticeably cooler in summer and warmer in winter, and makes the door quieter."),
+    ("Do I need an insulated garage door?", "If your garage is attached to the house, has a room above it, or you use it as a workshop or gym, insulation is worth it. For a detached garage used only for parking or storage, a non-insulated door is usually fine."),
+    ("What's the difference between 24 and 26 gauge steel?", "Gauge measures steel thickness, and a lower number means thicker steel. 24 gauge is thicker and more dent-resistant than 26 gauge."),
+    ("Can I get windows in my new door?", "Yes. Most styles can have windows, from a row along the top to modern side windows or full-view glass, with clear, frosted, obscure or tinted glass."),
+    ("Can I see a catalog?", "Yes. Text us at (626) 606-9766 and we'll send you our full catalog with every style, window design and color."),
+]

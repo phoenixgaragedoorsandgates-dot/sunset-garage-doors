@@ -5,7 +5,7 @@ import sys
 from html import escape as e
 
 sys.path.insert(0, os.path.dirname(__file__))
-from data import SITE, BIZ, BRANDS, CITIES, REVIEWS, FAQS, SERVICES, GALLERY  # noqa: E402
+from data import SITE, BIZ, BRANDS, CITIES, REVIEWS, FAQS, SERVICES, GALLERY, DOOR_STYLES, DOOR_COLORS, INSULATION, GLASS, STYLE_FAQS  # noqa: E402
 from posts import POSTS  # noqa: E402
 
 ROOT = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "public")
@@ -22,7 +22,7 @@ ICON = {
     "star": '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg>',
 }
 
-NAV = [("Services", "/services/"), ("Service Areas", "/service-areas/"), ("Reviews", "/#reviews"), ("Blog", "/blog/"), ("FAQ", "/faq/"), ("Contact", "/contact/")]
+NAV = [("Services", "/services/"), ("Door Styles", "/door-styles/"), ("Service Areas", "/service-areas/"), ("Reviews", "/#reviews"), ("Blog", "/blog/"), ("FAQ", "/faq/"), ("Contact", "/contact/")]
 
 
 # ---------- schema ----------
@@ -521,6 +521,89 @@ def faq_page():
                 body, schemas=[faq_schema(allfaq), crumbs_schema([("Home", "/"), ("FAQ", "/faq/")])], active="/faq/")
 
 
+def door_styles_page():
+    styles = ""
+    for i, st in enumerate(DOOR_STYLES):
+        specs = "".join(f"<li>{e(x)}</li>" for x in st["specs"])
+        styles += f"""
+<section class="section style-block" id="style-{i + 1}">
+  <div class="wrap">
+    {label(ROMAN[i], st["name"])}
+    <div class="two-col style-row">
+      <figure class="side-img"><img src="/images/{st["image"]}.jpg" alt="{e(st["alt"])}" loading="lazy"></figure>
+      <div>
+        <h2 class="h-md">{e(st["name"])}</h2>
+        <p class="lead">{e(st["text"])}</p>
+        <ul class="checks">{specs}</ul>
+      </div>
+    </div>
+  </div>
+</section>"""
+    colors = "".join(f'<li><span class="swatch" data-color="{e(c)}"></span>{e(c)}</li>' for c in DOOR_COLORS)
+    ins = "".join(f'<div class="ins"><h3>{e(n)}</h3><p>{e(t)}</p></div>' for n, t in INSULATION)
+    glass = "".join(f"<li>{e(g)}</li>" for g in GLASS)
+    n = len(DOOR_STYLES)
+    body = f"""
+<section class="page-head">
+  <div class="wrap">
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> / Door Styles</nav>
+    <h1 class="h-xl">Garage door styles &amp; options</h1>
+    <p class="lead">From classic raised panels to modern full-view glass. Pick a style, a color, insulation and windows, and we'll install it with a 3-year warranty. Financing available.</p>
+    <div class="btn-row">
+      <a class="btn btn-accent" href="sms:{TEL}">{ICON["text"]}Text us for the full catalog</a>
+      <a class="btn btn-dark" href="tel:{TEL}">{ICON["phone"]}Call {PHONE}</a>
+    </div>
+  </div>
+</section>
+{styles}
+<section class="section" id="colors">
+  <div class="wrap">
+    {label(ROMAN[n], "Colors")}
+    <div class="two-col">
+      <h2 class="h-md">8 colors to match your home</h2>
+      <div><ul class="colors">{colors}</ul><p class="body-note">Colors on a screen can look different in person. Ask us to bring samples when we come out.</p></div>
+    </div>
+  </div>
+</section>
+<section class="section" id="insulation">
+  <div class="wrap">
+    {label(ROMAN[n + 1], "Insulation")}
+    <div class="two-col">
+      <h2 class="h-md">Insulation &amp; R-value</h2>
+      <div>
+        <p class="lead">Insulation keeps an attached garage more comfortable, makes the door quieter and adds strength. Our insulated Steel Back doors are rated <strong>R-10</strong>.</p>
+        <div class="ins-grid">{ins}</div>
+        <ul class="checks">
+          <li>2" thick, 3-layer insulated steel sandwich panel</li>
+          <li>CFC-free polystyrene insulation that won't break down over time</li>
+          <li>Tongue-and-groove joints between sections to seal out wind and rain</li>
+          <li>Heavy-duty galvanized stiles for hinges, rollers and the opener</li>
+          <li>Bottom weatherstrip in a rigid retainer, easy to replace</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="section" id="windows">
+  <div class="wrap">
+    {label(ROMAN[n + 2], "Windows")}
+    <div class="two-col">
+      <h2 class="h-md">Windows &amp; glass</h2>
+      <div>
+        <p class="lead">Add natural light and style. Choose from rows of windows along the top, decorative carriage house windows, modern side windows or full-view glass.</p>
+        <ul class="cities">{glass}</ul>
+        <p class="body-note">Window inserts are high-impact plastic with a 7-year warranty against yellowing.</p>
+      </div>
+    </div>
+  </div>
+</section>
+{faq_list(STYLE_FAQS, dark=True, heading="Door style questions")}
+{cta_block("Ready to pick your new door?", "Text or call us. We'll help you choose the style, color and insulation, measure your opening and give you a price. Financing available through Acorn Finance.")}"""
+    return page("/door-styles/", "Garage Door Styles, Colors & Insulation | Sunset Garage Doors",
+                "Browse garage door styles installed by Sunset Garage Doors in Monrovia, CA: raised panel, carriage house, wood-look, modern flush and full-view glass. 8 colors, R-10 insulation, windows.",
+                body, schemas=[faq_schema(STYLE_FAQS), crumbs_schema([("Home", "/"), ("Door Styles", "/door-styles/")])], active="/door-styles/")
+
+
 def contact_page():
     hours = "".join(f"<li><span>{d}</span><span>{h}</span></li>" for d, h in BIZ["hours_text"])
     body = f"""
@@ -686,6 +769,7 @@ def llms_txt():
         "",
         f"- [Service areas]({SITE}/service-areas/)",
         f"- [FAQ]({SITE}/faq/)",
+        f"- [Door styles, colors & insulation]({SITE}/door-styles/)",
         f"- [Contact]({SITE}/contact/)",
         "",
     ]
@@ -700,6 +784,7 @@ def main():
         write(f"/{s['slug']}/", service_page(s)); urls.append(f"/{s['slug']}/")
     write("/service-areas/", areas_page()); urls.append("/service-areas/")
     write("/faq/", faq_page()); urls.append("/faq/")
+    write("/door-styles/", door_styles_page()); urls.append("/door-styles/")
     write("/contact/", contact_page()); urls.append("/contact/")
     write("/privacy/", privacy_page()); urls.append("/privacy/")
     write("/blog/", blog_index()); urls.append("/blog/")
