@@ -33,7 +33,7 @@
     "telephone": "+1-626-606-9766",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "507 W Foothill Blvd, Suite B",
+      "streetAddress": "507 W Foothill Blvd, Unit B",
       "addressLocality": "Monrovia",
       "addressRegion": "CA",
       "postalCode": "91016",
@@ -42,7 +42,11 @@
     "geo": { "@type": "GeoCoordinates", "latitude": 34.1494, "longitude": -118.0036 },
     "areaServed": { "@type": "GeoCircle", "geoMidpoint": { "@type": "GeoCoordinates", "latitude": 34.1494, "longitude": -118.0036 }, "geoRadius": "32000" },
     "hasMap": "https://maps.app.goo.gl/CKL2Y9rbQw3FU8xd6",
-    "priceRange": "$$"
+    "priceRange": "$$",
+    "openingHoursSpecification": [
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Sunday","Monday","Tuesday","Wednesday","Thursday"], "opens": "07:00", "closes": "22:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": "Friday", "opens": "07:00", "closes": "17:00" }
+    ]
   }
   </script>
 </head>
@@ -67,6 +71,7 @@
     <symbol id="i-brace" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M3 4h18v16H3zM3 9h18M3 15h18M8 4v16M16 4v16"/></symbol>
     <symbol id="i-panel" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M3 4h18v16H3zM6 7h12v10H6z"/></symbol>
     <symbol id="i-calendar" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M3 5h18v16H3zM3 10h18M8 2v5M16 2v5"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm1 10.6 3.5 2-1 1.7L11 13V6h2z"/></symbol>
     <symbol id="i-dollar" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M12 2v20M17 6H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></symbol>
   </defs>
 </svg>
@@ -256,7 +261,8 @@
       <div class="contact-grid">
         <div class="contact-card">
           <div class="contact-item"><div class="icon"><svg><use href="#i-phone"/></svg></div><div><strong>Call or text</strong><a href="tel:+16266069766">626-606-9766</a></div></div>
-          <div class="contact-item"><div class="icon"><svg><use href="#i-pin"/></svg></div><div><strong>Location</strong><span>507 W Foothill Blvd, Suite B<br>Monrovia, CA 91016</span></div></div>
+          <div class="contact-item"><div class="icon"><svg><use href="#i-pin"/></svg></div><div><strong>Location</strong><span>507 W Foothill Blvd, Unit B<br>Monrovia, CA 91016</span></div></div>
+          <div class="contact-item"><div class="icon"><svg><use href="#i-clock"/></svg></div><div><strong>Hours</strong><span class="hours">Sun – Thu: 7:00 AM – 10:00 PM<br>Friday: 7:00 AM – 5:00 PM<br>Saturday: Closed</span></div></div>
           <div class="contact-item"><div class="icon"><svg><use href="#i-shield"/></svg></div><div><strong>License</strong><span>CA #1136120</span></div></div>
           <div class="contact-actions">
             <a class="btn btn-primary" href="tel:+16266069766"><svg><use href="#i-phone"/></svg>Call Now</a>
@@ -275,7 +281,8 @@
   <div class="container footer-inner">
     <img src="/images/logo-sm.png" alt="Sunset Garage Doors" width="180" height="112" loading="lazy">
     <div>
-      <div><a href="tel:+16266069766">626-606-9766</a> · 507 W Foothill Blvd, Suite B, Monrovia, CA 91016</div>
+      <div><a href="tel:+16266069766">626-606-9766</a> · 507 W Foothill Blvd, Unit B, Monrovia, CA 91016</div>
+      <div>Sun–Thu 7 AM–10 PM · Fri 7 AM–5 PM · Sat closed</div>
       <div>CA License #1136120 · © <span id="yr">2026</span> Sunset Garage Doors</div>
     </div>
   </div>

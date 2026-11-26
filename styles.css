@@ -277,3 +277,4 @@ p { margin: 0 0 1em; }
   .section { padding: 60px 0; }
   .hero .container { padding-top: 64px; padding-bottom: 64px; }
 }
+.contact-item .hours { font-size: 1.02rem; line-height: 1.55; }
