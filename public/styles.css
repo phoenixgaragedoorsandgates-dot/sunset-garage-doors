@@ -252,7 +252,8 @@ details[open] .plus::after { transform: rotate(0); }
 
 /* Brand logo marquee */
 .brands-note { margin-top: 0; }
-.marquee { display: flex; overflow-x: auto; scrollbar-width: none; cursor: grab; gap: 16px; margin-bottom: clamp(40px, 6vw, 80px); -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); }
+.marquee-wrap { margin-bottom: clamp(40px, 6vw, 80px); -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); }
+.marquee { display: flex; overflow-x: auto; scrollbar-width: none; cursor: grab; gap: 16px; overscroll-behavior-x: contain; -webkit-overflow-scrolling: touch; }
 .marquee-track { display: flex; gap: 16px; list-style: none; margin: 0; padding: 0; flex: none; min-width: 100%; justify-content: space-around; }
 .marquee::-webkit-scrollbar { display: none; }
 .marquee.dragging, .carousel.dragging { cursor: grabbing; user-select: none; }
@@ -264,7 +265,8 @@ details[open] .plus::after { transform: rotate(0); }
 .finance-row { align-items: start; }
 @media (max-width: 860px) { .finance-row > div:first-child { display: none; } }
 @media (prefers-reduced-motion: reduce) {
-  .marquee { flex-wrap: wrap; -webkit-mask-image: none; mask-image: none; }
+  .marquee-wrap { -webkit-mask-image: none; mask-image: none; }
+  .marquee { flex-wrap: wrap; overflow: visible; }
   .marquee-track { animation: none; flex-wrap: wrap; min-width: 0; }
   .marquee-track[aria-hidden] { display: none; }
 }

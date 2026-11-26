@@ -237,11 +237,13 @@ def brand_marquee():
     def tiles(hidden):
         out = []
         for img, name in BRAND_LOGOS:
-            inner = f'<img src="/images/brands/{img}.png" alt="{"" if hidden else e(name)}" loading="lazy">' if img else f'<span class="brand-word">{e(name)}</span>'
+            inner = f'<img src="/images/brands/{img}.png" alt="{"" if hidden else e(name)}" decoding="async">' if img else f'<span class="brand-word">{e(name)}</span>'
             out.append(f'<li class="brand-tile">{inner}</li>')
         return "".join(out)
-    return (f'<div class="marquee" aria-label="Brands we install"><ul class="marquee-track">'
-            f'{tiles(False)}</ul><ul class="marquee-track" aria-hidden="true">{tiles(True)}</ul></div>')
+    return (f'<div class="marquee-wrap"><div class="marquee" aria-label="Brands we install">'
+            f'<ul class="marquee-track" aria-hidden="true">{tiles(True)}</ul>'
+            f'<ul class="marquee-track">{tiles(False)}</ul>'
+            f'<ul class="marquee-track" aria-hidden="true">{tiles(True)}</ul></div></div>')
 
 
 def city_list():
