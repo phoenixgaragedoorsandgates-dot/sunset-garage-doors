@@ -112,7 +112,7 @@ def page(path, title, description, body, schemas=(), og_image="og", active=""):
     <a class="header-call" href="tel:{TEL}">{ICON["phone"]}<span>{PHONE}</span></a>
     <button class="menu-btn" type="button" aria-expanded="false" aria-controls="mnav" aria-label="Menu"><span></span><span></span></button>
   </div>
-  <nav class="mnav" id="mnav" aria-label="Mobile">{mnav}<a class="btn btn-accent" href="tel:{TEL}">Call {PHONE}</a></nav>
+  <nav class="mnav" id="mnav" aria-label="Mobile">{mnav}<a class="btn btn-accent" href="tel:{TEL}">Call {PHONE}</a>{social_links("mnav-social")}</nav>
 </header>
 <main id="main">
 {body}

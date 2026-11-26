@@ -293,3 +293,5 @@ details[open] .plus::after { transform: rotate(0); }
 .social-link { width: 40px; height: 40px; border: 1px solid var(--rule); border-radius: 50%; display: grid; place-items: center; color: var(--ink); transition: background 0.2s, color 0.2s, border-color 0.2s; }
 .social-link svg { width: 18px; height: 18px; }
 .social-link:hover, .social-link:focus-visible { background: var(--accent); border-color: var(--accent); color: #fff; }
+.mnav .mnav-social { margin-top: 20px; gap: 12px; }
+.mnav .mnav-social a { padding: 0; border: 1px solid var(--rule); font-size: inherit; width: 44px; height: 44px; }
