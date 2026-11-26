@@ -243,7 +243,11 @@ SERVICES = [
         "faqs": [
             ("Will new rollers make my door quieter?", "Usually, yes. Swapping old steel rollers for nylon ones is one of the easiest ways to quiet a noisy door."),
         ],
-        "image": "door-double-woodgrain",
+        "image": "hinge-roller-closeup",
+        "gallery": [
+            ("hinge-roller-closeup", "Heavy-duty 14-gauge garage door hinge with a nylon roller in the track", "14-gauge hinge & nylon roller"),
+            ("roller-old-vs-new", "New white nylon garage door roller next to a worn black roller", "New nylon roller vs. worn old roller"),
+        ],
     },
     {
         "slug": "garage-door-reinforcement",
