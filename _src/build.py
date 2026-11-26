@@ -264,9 +264,12 @@ def home():
         with _Im.open(os.path.join(ROOT, "images", img + ".jpg")) as im:
             return im.width / im.height, im.width, im.height
     gallery = ""
-    for img, alt, cap in GALLERY:
-        r, w, h = _ratio(img)
-        gallery += f'<figure style="flex: {r:.3f} 1 0"><figcaption>{e(cap)}</figcaption><img src="/images/{img}.jpg" alt="{e(alt)}" loading="lazy" width="{w}" height="{h}"></figure>'
+    for k in range(0, len(GALLERY), 3):
+        row = ""
+        for img, alt, cap in GALLERY[k:k + 3]:
+            r, w, h = _ratio(img)
+            row += f'<figure style="flex: {r:.3f} 1 0"><figcaption>{e(cap)}</figcaption><img src="/images/{img}.jpg" alt="{e(alt)}" loading="lazy" width="{w}" height="{h}"></figure>'
+        gallery += f'<div class="gallery-row">{row}</div>'
 
     hours = "".join(f"<li><span>{d}</span><span>{h}</span></li>" for d, h in BIZ["hours_text"])
     body = f"""
@@ -319,7 +322,7 @@ def home():
 <section class="section" id="work">
   <div class="wrap">
     {label("III", "Recent Work")}
-    <div class="gallery-row">{gallery}</div>
+    <div class="gallery-rows">{gallery}</div>
   </div>
 </section>
 

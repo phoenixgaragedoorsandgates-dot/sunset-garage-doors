@@ -307,3 +307,4 @@ details[open] .plus::after { transform: rotate(0); }
 .gallery-row img { width: 100%; height: auto; }
 @media (max-width: 760px) { .gallery-row { flex-direction: column; gap: 36px; align-items: stretch; } }
 .two-col:has(> .about-media) { align-items: end; }
+.gallery-rows { display: flex; flex-direction: column; gap: 36px; }
