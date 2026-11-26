@@ -83,7 +83,7 @@ SERVICES = [
             ("Why is my garage door making so much noise?", "Common causes are worn rollers, loose hardware, dry moving parts or springs near the end of their life. A tune-up and new nylon rollers often make a door much quieter."),
             ("My door opens a few inches and stops. What's wrong?", "That's often a broken spring or a misadjusted opener force setting. Don't keep running the opener; it can damage the opener and the door. Call or text us a photo."),
         ],
-        "image": "door-double-woodgrain",
+        "image": "spring-old-removed",
     },
     {
         "slug": "garage-door-spring-replacement",
