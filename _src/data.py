@@ -163,15 +163,7 @@ SERVICES = [
         "faqs": [
             ("Why does my garage door go back up when I try to close it?", "Most often the safety sensors near the floor are misaligned, dirty or blocked. It can also be the force settings. If cleaning and lining up the sensors doesn't fix it, call us."),
         ],
-        "image": "opener-liftmaster-belt",
-        "gallery": [
-            ("opener-technician-mounting", "Sunset Garage Doors technician drilling to secure a garage door opener mounting bracket", "Securing the opener bracket"),
-            ("opener-liftmaster-belt", "LiftMaster belt-drive garage door opener with built-in LED light", "LiftMaster belt drive"),
-            ("opener-liftmaster-led", "LiftMaster myQ garage door opener with LED light on a chain rail", "LiftMaster with LED light"),
-            ("opener-liftmaster-chain", "LiftMaster chain-drive opener with emergency release cord", "Chain drive & emergency release"),
-            ("opener-liftmaster-camera", "LiftMaster ceiling-mount opener with built-in myQ camera and Wi-Fi", "Opener with myQ camera"),
-            ("opener-led-underside", "Garage door opener with LED light ring seen from below", "LED light ring"),
-        ],
+        "image": "opener-technician-mounting",
     },
     {
         "slug": "garage-door-opener-installation",
@@ -197,6 +189,7 @@ SERVICES = [
             ("opener-liftmaster-camera", "New LiftMaster ceiling-mount opener with built-in myQ camera and Wi-Fi", "Ceiling-mount opener with myQ camera"),
             ("opener-led-underside", "New garage door opener with LED light ring, seen from below", "Built-in LED light"),
             ("opener-liftmaster-belt", "New LiftMaster belt-drive opener with built-in LED light", "Quiet belt drive"),
+            ("opener-liftmaster-chain", "New LiftMaster chain-drive opener with emergency release cord", "Chain drive"),
         ],
     },
     {
