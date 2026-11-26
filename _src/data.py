@@ -247,7 +247,7 @@ SERVICES = [
         "gallery": [
             ("commercial-open-inside", "New commercial steel sectional door open, seen from inside a warehouse", "Open, from inside"),
             ("commercial-open-side", "Commercial steel garage door tracks and struts seen from inside", "Tracks & struts"),
-            ("commercial-opening", "Commercial steel sectional door partially open on a block building", "Partly open"),
+            ("commercial-opening", "Commercial steel sectional door during installation, with the top panel not yet in place", "During installation"),
         ],
     },
     {
