@@ -140,7 +140,7 @@ SERVICES = [
         "gallery": [
             ("offtrack-collapsed", "Garage door that came off its track and collapsed into the garage", "Door off track and folded in"),
             ("offtrack-bent-panels", "Double garage door with bent, buckled panels after coming off track", "Bent and buckled panels"),
-            ("offtrack-door-hanging", "Inside view of a crooked garage door hanging lower on one side", "Crooked door, inside view"),
+            ("offtrack-door-clean", "Inside view of a crooked garage door hanging lower on one side", "Crooked door, inside view"),
         ],
     },
     {
