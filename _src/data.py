@@ -342,6 +342,7 @@ SERVICES = [
         "gallery_title": "Cables & drums",
         "gallery": [
             ("cable-frayed", "Snapped and frayed garage door lift cable", "Snapped, frayed cable"),
+            ("cable-unwound-drum", "Garage door lift cable unwound and tangled off the cable drum", "Cable off the drum"),
         ],
     },
     {
