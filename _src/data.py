@@ -222,6 +222,12 @@ SERVICES = [
         "image": "newdoor-carriage-hardware",
         "gallery_title": "New doors we've installed",
         "gallery": [
+            ("newdoor-wood-look-windows", "New wood-look garage door with long top windows on a wood-sided home", "Wood-look, top windows"),
+            ("newdoor-white-raised-long", "New white raised long-panel 2-car garage door", "Classic white, long panels"),
+            ("newdoor-frosted-two-doors", "Two new black full-view garage doors with frosted glass", "Frosted glass, 2 doors"),
+            ("newdoor-black-glass-outside", "New black aluminum full-view garage door with dark glass", "Black glass, outside view"),
+            ("newdoor-white-flush", "New white flush-panel modern garage door", "White flush, modern"),
+            ("newdoor-white-flush-window", "New white flush-panel garage door with one side window", "White flush, single window"),
             ("newdoor-full-view-white", "New full-view glass garage door with white aluminum frame", "Full-view glass, white frame"),
             ("newdoor-modern-brown", "New modern flush garage door in brown wood-grain with vertical side windows", "Modern flush, side windows"),
             ("newdoor-modern-black", "New black modern garage door with long side windows", "Modern black"),
