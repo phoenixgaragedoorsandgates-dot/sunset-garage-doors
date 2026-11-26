@@ -391,7 +391,7 @@ def service_page(s):
     extra = [g for g in s.get("gallery", []) if g[0] != s["image"]]
     if extra:
         figs = "".join(f'<figure><figcaption>{e(cap)}</figcaption><img src="/images/{img}.jpg" alt="{e(alt)}" loading="lazy"></figure>' for img, alt, cap in extra)
-        gallery_html = f'''<section class="section"><div class="wrap">{label("", s.get("gallery_title") or "Our " + s["name"].lower() + " work")}<div class="gallery gallery-{min(len(extra), 4)}">{figs}</div></div></section>
+        gallery_html = f'''<section class="section"><div class="wrap">{label("", s.get("gallery_title") or "Our " + s["name"].lower() + " work")}<div class="gallery gallery-{3 if len(extra) in (5, 6) else min(len(extra), 4)}">{figs}</div></div></section>
 '''
     body = f"""
 <section class="page-head">
