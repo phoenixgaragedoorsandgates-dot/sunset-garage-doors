@@ -8,7 +8,7 @@ sys.path.insert(0, os.path.dirname(__file__))
 from data import SITE, BIZ, BRANDS, CITIES, REVIEWS, FAQS, SERVICES, GALLERY  # noqa: E402
 from posts import POSTS  # noqa: E402
 
-ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+ROOT = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "public")
 TEL = BIZ["phone_tel"]
 PHONE = BIZ["phone_display"]
 BIZ_ID = SITE + "/#business"
@@ -611,7 +611,7 @@ def main():
         f"  <url><loc>{SITE}{u}</loc></url>\n" for u in urls) + "</urlset>\n"
     open(os.path.join(ROOT, "sitemap.xml"), "w").write(sm)
     open(os.path.join(ROOT, "llms.txt"), "w").write(llms_txt())
-    open(os.path.join(ROOT, "robots.txt"), "w").write(f"User-agent: *\nAllow: /\nDisallow: /_src/\n\nSitemap: {SITE}/sitemap.xml\n")
+    open(os.path.join(ROOT, "robots.txt"), "w").write(f"User-agent: *\nAllow: /\nSitemap: {SITE}/sitemap.xml\n")
     print(f"built {len(urls)} pages")
 
 
