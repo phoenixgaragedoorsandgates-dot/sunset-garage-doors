@@ -415,7 +415,7 @@ assert sorted(SERVICE_ORDER) == sorted(x["slug"] for x in SERVICES)
 SERVICES.sort(key=lambda x: SERVICE_ORDER.index(x["slug"]))
 
 GALLERY = [
-    ("door-double-woodgrain", "Double garage door, dark wood-grain finish with top windows", "Double Door Installation"),
+    ("door-double-woodgrain", "Double garage door, dark wood-grain finish with top windows", "2-Car Garage Door Installation"),
     ("door-single-woodgrain", "Single garage door, dark wood-grain finish with windows", "Single Door Installation"),
     ("technician-installing", "Technician fastening weather seal above a new garage door", "Weather Seal"),
 ]
