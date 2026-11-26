@@ -191,7 +191,12 @@ SERVICES = [
         "faqs": [
             ("Belt drive or chain drive?", "Belt drives are much quieter, which matters if there's a bedroom above or next to the garage. Chain drives are durable and usually cost less. We'll help you choose."),
         ],
-        "image": "door-single-woodgrain",
+        "image": "opener-liftmaster-led",
+        "gallery": [
+            ("opener-liftmaster-camera", "New LiftMaster wall-mount opener with built-in myQ camera and Wi-Fi", "Wall-mount opener with myQ camera"),
+            ("opener-led-underside", "New garage door opener with LED light ring, seen from below", "Built-in LED light"),
+            ("opener-liftmaster-belt", "New LiftMaster belt-drive opener with built-in LED light", "Quiet belt drive"),
+        ],
     },
     {
         "slug": "new-garage-door-installation",
