@@ -12,6 +12,7 @@ ROOT = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
 TEL = BIZ["phone_tel"]
 PHONE = BIZ["phone_display"]
 BIZ_ID = SITE + "/#business"
+CSLB = "https://www.cslb.ca.gov/OnlineServices/CheckLicenseII/LicenseDetail.aspx?LicNum=" + BIZ["license"]
 ROMAN = ["I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X", "XI", "XII"]
 
 ICON = {
@@ -287,7 +288,7 @@ def home():
   </div>
   <div class="hero-media"><img src="/images/hero-home.jpg" srcset="/images/hero-home-1200.jpg 1200w, /images/hero-home.jpg 2400w" sizes="100vw" alt="Modern home with black full-view glass garage doors at sunset" width="2400" height="1152" fetchpriority="high"></div>
   <div class="wrap facts">
-    <div><span class="fact-k">License</span><span class="fact-v">CA #{BIZ["license"]}</span></div>
+    <div><span class="fact-k">Licensed &amp; insured</span><a class="fact-v fact-link" href="{CSLB}" target="_blank" rel="noopener" title="Verify on the California Contractors State License Board">Lic. #{BIZ["license"]}</a></div>
     <div><span class="fact-k">In business</span><span class="fact-v">{BIZ["years"]} years</span></div>
     <div><span class="fact-k">Repair warranty</span><span class="fact-v">1 year</span></div>
     <div><span class="fact-k">Install warranty</span><span class="fact-v">3 years</span></div>
@@ -440,7 +441,7 @@ def service_page(s):
   <div class="wrap">
     {label("II", "Why Sunset")}
     <div class="facts facts-inline">
-      <div><span class="fact-k">License</span><span class="fact-v">CA #{BIZ["license"]}</span></div>
+      <div><span class="fact-k">Licensed &amp; insured</span><a class="fact-v fact-link" href="{CSLB}" target="_blank" rel="noopener" title="Verify on the California Contractors State License Board">Lic. #{BIZ["license"]}</a></div>
       <div><span class="fact-k">In business</span><span class="fact-v">{BIZ["years"]} years</span></div>
       <div><span class="fact-k">Repair warranty</span><span class="fact-v">1 year</span></div>
       <div><span class="fact-k">Install warranty</span><span class="fact-v">3 years</span></div>
