@@ -164,6 +164,11 @@ SERVICES = [
             ("Why does my garage door go back up when I try to close it?", "Most often the safety sensors near the floor are misaligned, dirty or blocked. It can also be the force settings. If cleaning and lining up the sensors doesn't fix it, call us."),
         ],
         "image": "opener-technician-mounting",
+        "gallery_title": "Opener repairs",
+        "gallery": [
+            ("opener-broken-rail", "Broken belt-drive garage door opener rail with the belt hanging loose", "Broken rail, loose belt"),
+            ("opener-liftmaster-p3", "LiftMaster chain-drive garage door opener mounted on the garage ceiling", "LiftMaster opener"),
+        ],
     },
     {
         "slug": "garage-door-opener-installation",
