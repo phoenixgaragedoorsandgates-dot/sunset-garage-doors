@@ -282,6 +282,7 @@ def home():
     <h1 class="h-xl">Garage door repair in Monrovia, done right the first time.</h1>
     <div class="hero-sub">
       <p class="lead">Broken springs, off-track doors, openers and new garage doors for homes and businesses across the San Gabriel Valley. Same-day service available. Licensed, local, and backed by a written warranty on every job.</p>
+      <a class="rating-line" href="{BIZ["google"]}" target="_blank" rel="noopener" aria-label="Rated 5.0 out of 5 on Google reviews"><span class="rating-stars">{ICON["star"] * 5}</span><strong>5.0</strong> on Google reviews</a>
       <div class="btn-row">
         <a class="btn btn-accent" href="tel:{TEL}">{ICON["phone"]}Call {PHONE}</a>
         <a class="btn btn-dark" href="sms:{TEL}">{ICON["text"]}Text Us</a>
