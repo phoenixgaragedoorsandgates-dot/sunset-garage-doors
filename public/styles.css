@@ -234,8 +234,7 @@ details[open] .plus::after { transform: rotate(0); }
 .footer-col strong { font-weight: 500; margin-bottom: 4px; }
 .footer-links a { text-decoration: none; color: var(--muted); }
 .footer-links a:hover { color: var(--ink); }
-.wordmark { font-size: clamp(4.5rem, 24vw, 26rem); font-weight: 600; letter-spacing: -0.06em; line-height: 0.8; margin: clamp(48px, 7vw, 100px) 0 24px; color: var(--ink); white-space: nowrap; overflow: hidden; }
-.footer-base { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; color: var(--muted); font-size: 0.88rem; }
+.footer-base { margin-top: 48px; padding-top: 20px; border-top: 1px solid var(--rule); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; color: var(--muted); font-size: 0.88rem; }
 @media (max-width: 860px) { .footer-grid { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 520px) { .footer-grid { grid-template-columns: 1fr; } }
 
