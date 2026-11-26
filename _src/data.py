@@ -415,7 +415,6 @@ SERVICES.sort(key=lambda x: SERVICE_ORDER.index(x["slug"]))
 
 GALLERY = [
     ("newdoor-full-view-white", "New full-view glass garage door with white aluminum frame", "Full-View Glass Door"),
-    ("door-single-woodgrain", "Single garage door, dark wood-grain finish with windows", "1-Car Garage Door Installation"),
     ("newdoor-modern-brown", "New modern flush garage door in brown wood-grain with side windows", "Modern Flush Door"),
     ("technician-installing", "Technician fastening weather seal above a new garage door", "Weather Seal"),
     ("newdoor-black-glass-inside", "New black full-view glass garage door seen from inside", "Black Glass, Inside View"),
