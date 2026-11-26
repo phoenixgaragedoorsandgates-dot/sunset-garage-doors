@@ -9,7 +9,10 @@
     var el = document.getElementById(id);
     if (!el) return;
     var until = performance.now() + 2500, userMoved = false;
-    function y() { return el.getBoundingClientRect().top + window.pageYOffset - headerOffset(); }
+    // Skip the section's empty top padding: land on its label/heading instead.
+    var anchor = el.querySelector(".label, h1, h2") || el;
+    var extra = anchor === el ? 0 : 20;
+    function y() { return anchor.getBoundingClientRect().top + window.pageYOffset - headerOffset() - extra; }
     function stop() { userMoved = true; }
     window.addEventListener("wheel", stop, { once: true, passive: true });
     window.addEventListener("touchstart", stop, { once: true, passive: true });
