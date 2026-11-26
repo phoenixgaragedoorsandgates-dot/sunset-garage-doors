@@ -314,10 +314,6 @@ def home():
   </div>
 </section>
 
-<section class="feature-band" aria-label="Modern full-view glass garage door">
-  <img src="/images/modern-home-glass-door.jpg" srcset="/images/modern-home-glass-door-1200.jpg 1200w, /images/modern-home-glass-door.jpg 2400w" sizes="100vw" alt="Modern home at dusk with a lit full-view glass garage door" loading="lazy" width="2400" height="1599">
-</section>
-
 <section class="section" id="work">
   <div class="wrap">
     {label("III", "Recent Work")}
@@ -326,6 +322,11 @@ def home():
 </section>
 
 {reviews_block("IV")}
+
+<section class="feature-band" aria-label="Modern full-view glass garage door">
+  <img src="/images/modern-home-glass-door.jpg" srcset="/images/modern-home-glass-door-1200.jpg 1200w, /images/modern-home-glass-door.jpg 2400w" sizes="100vw" alt="Modern home at dusk with a lit full-view glass garage door" loading="lazy" width="2400" height="1599">
+</section>
+
 
 <section class="section">
   <div class="wrap">
