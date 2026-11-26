@@ -210,6 +210,23 @@ def service_rows(services):
         for i, s in enumerate(services)) + "</ol>"
 
 
+BRAND_LOGOS = [
+    ("liftmaster", "LiftMaster"), ("chamberlain", "Chamberlain"), ("elegant", "Elegant Custom Garage Doors & Gates"),
+    ("instock", "Instock Garage Doors"), (None, "CHI Overhead Doors"),
+]
+
+
+def brand_marquee():
+    def tiles(hidden):
+        out = []
+        for img, name in BRAND_LOGOS:
+            inner = f'<img src="/images/brands/{img}.png" alt="{"" if hidden else e(name)}" loading="lazy">' if img else f'<span class="brand-word">{e(name)}</span>'
+            out.append(f'<li class="brand-tile">{inner}</li>')
+        return "".join(out)
+    return (f'<div class="marquee" aria-label="Brands we install"><ul class="marquee-track">'
+            f'{tiles(False)}</ul><ul class="marquee-track" aria-hidden="true">{tiles(True)}</ul></div>')
+
+
 def city_list():
     return '<ul class="cities">' + "".join(f"<li>{e(c)}</li>" for c in CITIES) + "</ul>"
 
@@ -281,15 +298,16 @@ def home():
 <section class="section">
   <div class="wrap">
     {label("V", "Brands & Financing")}
-    <div class="two-col">
-      <h2 class="h-md">Brands we install</h2>
-      <div>
-        <ul class="brand-list">{"".join(f"<li>{e(b)}</li>" for b in BRANDS)}</ul>
-        <div class="finance-note">
-          <h3>Financing available</h3>
-          <p>Pay over time for a new door or opener with Acorn Finance. Call us to get started.</p>
-          <a class="link-arrow" href="tel:{TEL}">Ask about financing {ICON["arrow"]}</a>
-        </div>
+    <div class="two-col head-row"><h2 class="h-md">Brands we install</h2><p class="body-note brands-note">Garage door openers from LiftMaster and Chamberlain, and doors from Elegant, Instock and CHI Overhead Doors. We also repair most other brands.</p></div>
+  </div>
+  {brand_marquee()}
+  <div class="wrap">
+    <div class="two-col finance-row">
+      <div></div>
+      <div class="finance-note">
+        <h3>Financing available</h3>
+        <p>Pay over time for a new door or opener with Acorn Finance. Call us to get started.</p>
+        <a class="link-arrow" href="tel:{TEL}">Ask about financing {ICON["arrow"]}</a>
       </div>
     </div>
   </div>
