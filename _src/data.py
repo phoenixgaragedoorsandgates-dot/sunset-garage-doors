@@ -125,7 +125,12 @@ SERVICES = [
         "faqs": [
             ("Can I push my door back on the track myself?", "It's not safe. The door is under spring tension and can shift or fall. Leave it where it is and call us."),
         ],
-        "image": "door-single-woodgrain",
+        "image": "offtrack-collapsed",
+        "gallery_title": "What an off-track door looks like",
+        "gallery": [
+            ("offtrack-collapsed", "Garage door that came off its track and collapsed into the garage", "Door off track and folded in"),
+            ("offtrack-bent-panels", "Double garage door with bent, buckled panels after coming off track", "Bent and buckled panels"),
+        ],
     },
     {
         "slug": "garage-door-opener-repair",

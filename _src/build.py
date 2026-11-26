@@ -367,9 +367,10 @@ def service_page(s):
     if posts:
         post_html = '<div class="related-posts"><h3>From the blog</h3>' + "".join(f'<a class="link-arrow" href="/blog/{p["slug"]}/">{e(p["title"])} {ICON["arrow"]}</a>' for p in posts) + "</div>"
     gallery_html = ""
-    if s.get("gallery"):
-        figs = "".join(f'<figure><figcaption>{e(cap)}</figcaption><img src="/images/{img}.jpg" alt="{e(alt)}" loading="lazy"></figure>' for img, alt, cap in s["gallery"])
-        gallery_html = f'''<section class="section"><div class="wrap">{label("", "Our " + s["name"].lower() + " work")}<div class="gallery gallery-4">{figs}</div></div></section>
+    extra = [g for g in s.get("gallery", []) if g[0] != s["image"]]
+    if extra:
+        figs = "".join(f'<figure><figcaption>{e(cap)}</figcaption><img src="/images/{img}.jpg" alt="{e(alt)}" loading="lazy"></figure>' for img, alt, cap in extra)
+        gallery_html = f'''<section class="section"><div class="wrap">{label("", s.get("gallery_title") or "Our " + s["name"].lower() + " work")}<div class="gallery gallery-{min(len(extra), 4)}">{figs}</div></div></section>
 '''
     body = f"""
 <section class="page-head">
