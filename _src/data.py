@@ -163,7 +163,14 @@ SERVICES = [
         "faqs": [
             ("Why does my garage door go back up when I try to close it?", "Most often the safety sensors near the floor are misaligned, dirty or blocked. It can also be the force settings. If cleaning and lining up the sensors doesn't fix it, call us."),
         ],
-        "image": "door-double-woodgrain",
+        "image": "opener-liftmaster-belt",
+        "gallery": [
+            ("opener-liftmaster-belt", "LiftMaster belt-drive garage door opener with built-in LED light", "LiftMaster belt drive"),
+            ("opener-liftmaster-led", "LiftMaster myQ garage door opener with LED light on a chain rail", "LiftMaster with LED light"),
+            ("opener-liftmaster-chain", "LiftMaster chain-drive opener with emergency release cord", "Chain drive & emergency release"),
+            ("opener-liftmaster-camera", "LiftMaster wall-mount opener with built-in myQ camera and Wi-Fi", "Opener with myQ camera"),
+            ("opener-led-underside", "Garage door opener with LED light ring seen from below", "LED light ring"),
+        ],
     },
     {
         "slug": "garage-door-opener-installation",
