@@ -322,3 +322,5 @@ details[open] .plus::after { transform: rotate(0); }
 }
 .finish-head { margin: 36px 0 16px; font-size: 1.05rem; }
 .finishes .swatch { aspect-ratio: 406 / 107; }
+.work-cta { display: flex; flex-wrap: wrap; gap: 16px 36px; margin-top: 36px; }
+.styles-btn { margin-top: 12px; white-space: normal; text-align: left; }

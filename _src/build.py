@@ -326,6 +326,7 @@ def home():
   <div class="wrap">
     {label("III", "Recent Work")}
     <div class="gallery-rows">{gallery}</div>
+    <div class="work-cta"><a class="link-arrow" href="/door-styles/">Browse door styles, colors &amp; insulation {ICON["arrow"]}</a><a class="link-arrow" href="/new-garage-door-installation/">See more new doors {ICON["arrow"]}</a></div>
   </div>
 </section>
 
@@ -408,6 +409,8 @@ def service_page(s):
     if posts:
         post_html = '<div class="related-posts"><h3>From the blog</h3>' + "".join(f'<a class="link-arrow" href="/blog/{p["slug"]}/">{e(p["title"])} {ICON["arrow"]}</a>' for p in posts) + "</div>"
     gallery_html = ""
+    styles_link = (f'<a class="btn btn-dark styles-btn" href="/door-styles/">Browse door styles, colors &amp; insulation {ICON["arrow"]}</a>'
+                   if s["slug"] in ("new-garage-door-installation", "one-piece-garage-doors") else "")
     extra = [g for g in s.get("gallery", []) if g[0] != s["image"]]
     if extra:
         figs = "".join(f'<figure><figcaption>{e(cap)}</figcaption><img src="/images/{img}.jpg" alt="{e(alt)}" loading="lazy"></figure>' for img, alt, cap in extra)
@@ -427,7 +430,7 @@ def service_page(s):
 <section class="section section-tight">
   <div class="wrap two-col">
     <figure class="side-img"><img src="/images/{s["image"]}.jpg" alt="{e(s["name"])} by Sunset Garage Doors in Monrovia, CA" loading="lazy"></figure>
-    <div class="prose-lg">{intro}</div>
+    <div class="prose-lg">{intro}{styles_link}</div>
   </div>
 </section>
 {gallery_html}<section class="section">
