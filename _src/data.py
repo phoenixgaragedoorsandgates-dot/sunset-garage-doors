@@ -489,12 +489,12 @@ INSULATION = [
     ("Steel Back", "A 2\" thick, 3-layer sandwich: steel outside, insulation in the middle, steel inside. The strongest, quietest and best-insulated option. Rated R-10."),
 ]
 
-GLASS = [("Clear", "clear"), ("Frosted", "frosted"), ("Delta Frosted", "delta-frosted"), ("Obscure", "obscure"), ("Tinted", "tinted"), ("White Laminated", "white-laminated"), ("Black Laminated", "black-laminated")]
+GLASS = [("Clear", "clear"), ("Frosted", "frosted"), ("Obscure", "obscure"), ("Tinted", "tinted"), ("White Laminated", "white-laminated"), ("Black Laminated", "black-laminated")]
 
 STYLE_FAQS = [
     ("What does R-value mean?", "R-value measures how well insulation slows heat moving through the door. The higher the number, the better it insulates. Polypack doors are rated R-8 and Steel Back doors are rated R-10. Either keeps an attached garage noticeably cooler in summer and warmer in winter, and makes the door quieter."),
     ("Do I need an insulated garage door?", "If your garage is attached to the house, has a room above it, or you use it as a workshop or gym, insulation is worth it. For a detached garage used only for parking or storage, a non-insulated door is usually fine."),
     ("What's the difference between 24 and 26 gauge steel?", "Gauge measures steel thickness, and a lower number means thicker steel. 24 gauge is thicker and more dent-resistant than 26 gauge."),
-    ("Can I get windows in my new door?", "Yes. Most styles can have windows, from a row along the top to modern side windows or full-view glass, with clear, frosted, delta frosted, obscure, tinted or laminated glass."),
+    ("Can I get windows in my new door?", "Yes. Most styles can have windows, from a row along the top to modern side windows or full-view glass, with clear, frosted, obscure, tinted or laminated glass."),
     ("Can I see a catalog?", "Yes. Text us at (626) 606-9766 and we'll send you our full catalog with every style, window design and color."),
 ]
