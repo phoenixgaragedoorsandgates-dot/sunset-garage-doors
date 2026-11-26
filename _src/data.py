@@ -220,7 +220,7 @@ SERVICES = [
         "image": "newdoor-carriage-hardware",
         "gallery_title": "New doors we've installed",
         "gallery": [
-            ("newdoor-wood-look-windows", "New wood-look garage door with long top windows on a wood-sided home", "Wood-look, top windows"),
+            ("newdoor-wood-look-windows", "New wood-like garage door with long top windows on a wood-sided home", "Wood-like, top windows"),
             ("newdoor-white-raised-long", "New white raised long-panel 2-car garage door", "Classic white, long panels"),
             ("newdoor-black-glass-outside", "New black aluminum full-view garage door with dark glass", "Black glass, outside view"),
             ("newdoor-white-flush", "New white flush-panel modern garage door", "White flush, modern"),
@@ -445,11 +445,11 @@ DOOR_STYLES = [
         "specs": ["24 gauge steel", "Short or long panels", "Decorative hinges, handles and knockers", "Non-insulated, Polypack or Steel Back"],
     },
     {
-        "name": "Wood-Look",
+        "name": "Wood-Like",
         "image": "newdoor-wood-look-windows",
-        "alt": "Wood-look steel garage door with long top windows",
-        "text": "The warmth of real wood without the upkeep. A deep woodgrain texture with a light or dark wood finish on steel, so it won't rot, warp or need re-staining. Available in carriage house, raised panel and flush styles.",
-        "specs": ["24 or 26 gauge steel", "Light or Dark Wood-Like finish", "Raised panel, carriage house or flush", "Non-insulated, Polypack or Steel Back"],
+        "alt": "Wood-like steel garage door with long top windows",
+        "text": "The warmth of real wood without the upkeep. A deep woodgrain texture with a light or dark wood finish on steel, so it won't rot, warp or need re-staining. Available in carriage house, raised panel, flush and plank styles.",
+        "specs": ["24 or 26 gauge steel", "Light or Dark Wood-Like finish", "Raised panel, carriage house, flush or planks", "Non-insulated, Polypack or Steel Back"],
     },
     {
         "name": "Flush Woodgrain",
@@ -477,7 +477,7 @@ DOOR_STYLES = [
         "image": "newdoor-black-glass-outside",
         "alt": "Black aluminum full-view glass garage door",
         "text": "Aluminum frames with large glass panels. Choose clear, frosted, tinted or obscure glass for the look and privacy you want. A bold modern statement that also lets light into the garage.",
-        "specs": ["Aluminum frame", "Black, white, bronze or nickel frames", "Clear, frosted, tinted or obscure glass", "Many frame layouts"],
+        "specs": ["Aluminum frame", "White, Black Satin, Dark Bronze or Brushed Nickel finish", "Clear, frosted, tinted or obscure glass", "Many frame layouts"],
     },
 ]
 

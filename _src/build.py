@@ -540,7 +540,7 @@ def door_styles_page():
   </div>
 </section>"""
     colors = "".join(f'<li><img class="swatch" src="/images/colors/{f}.jpg" alt="{e(c)} garage door color sample" loading="lazy" width="500" height="500">{e(c)}</li>' for c, f in DOOR_COLORS)
-    finishes = "".join(f'<li><img class="swatch" src="/images/finishes/{f}.jpg" alt="{e(c)} Modern Flush Smooth garage door finish" loading="lazy" width="406" height="107">{e(c)}</li>' for c, f in MODERN_FINISHES)
+    finishes = "".join(f'<li><img class="swatch" src="/images/finishes/{f}.jpg" alt="{e(c)} full-view garage door frame finish" loading="lazy" width="406" height="107">{e(c)}</li>' for c, f in MODERN_FINISHES)
     ins = "".join(f'<div class="ins"><h3>{e(n)}</h3><p>{e(t)}</p></div>' for n, t in INSULATION)
     glass = "".join(f'<li><img class="swatch" src="/images/glass/{f}.jpg" alt="{e(g)} garage door window glass sample" loading="lazy" width="300" height="300">{e(g)}</li>' for g, f in GLASS)
     n = len(DOOR_STYLES)
@@ -562,7 +562,7 @@ def door_styles_page():
     {label(ROMAN[n], "Colors")}
     <div class="two-col">
       <h2 class="h-md">8 colors to match your home</h2>
-      <div><ul class="colors">{colors}</ul><h3 class="finish-head">Modern Flush Smooth finishes</h3><ul class="colors finishes">{finishes}</ul><p class="body-note">Colors on a screen can look different in person. Ask us to bring samples when we come out.</p></div>
+      <div><ul class="colors">{colors}</ul><h3 class="finish-head">Full-view door finishes</h3><ul class="colors finishes">{finishes}</ul><p class="body-note">Colors on a screen can look different in person. Ask us to bring samples when we come out.</p></div>
     </div>
   </div>
 </section>
@@ -601,7 +601,7 @@ def door_styles_page():
 {faq_list(STYLE_FAQS, dark=True, heading="Door style questions")}
 {cta_block("Ready to pick your new door?", "Text or call us. We'll help you choose the style, color and insulation, measure your opening and give you a price. Financing available through Acorn Finance.")}"""
     return page("/door-styles/", "Garage Door Styles, Colors & Insulation | Sunset Garage Doors",
-                "Browse garage door styles installed by Sunset Garage Doors in Monrovia, CA: raised panel, carriage house, wood-look, modern flush and full-view glass. 8 colors, R-8 and R-10 insulation, windows.",
+                "Browse garage door styles installed by Sunset Garage Doors in Monrovia, CA: raised panel, carriage house, wood-like, flush woodgrain, modern and full-view glass. 8 colors, R-8 and R-10 insulation, windows.",
                 body, schemas=[faq_schema(STYLE_FAQS), crumbs_schema([("Home", "/"), ("Door Styles", "/door-styles/")])], active="/door-styles/")
 
 
