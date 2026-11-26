@@ -290,6 +290,8 @@ details[open] .plus::after { transform: rotate(0); }
 
 /* Social icons */
 .social { display: flex; gap: 10px; margin-top: 6px; }
+.footer-col .social { margin-top: 20px; margin-bottom: 8px; }
+.contact-cols .social { margin-bottom: 12px; }
 .social-link { width: 40px; height: 40px; border: 1px solid var(--rule); border-radius: 50%; display: grid; place-items: center; color: var(--ink); transition: background 0.2s, color 0.2s, border-color 0.2s; }
 .social-link svg { width: 18px; height: 18px; }
 .social-link:hover, .social-link:focus-visible { background: var(--accent); border-color: var(--accent); color: #fff; }

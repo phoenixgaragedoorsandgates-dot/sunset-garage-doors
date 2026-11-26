@@ -129,7 +129,7 @@ def page(path, title, description, body, schemas=(), og_image="og", active=""):
       </div>
       <div class="footer-col"><strong>Hours</strong>{hours}</div>
       <div class="footer-col footer-links"><strong>Services</strong>{svc_links}</div>
-      <div class="footer-col footer-links"><strong>Company</strong>{mnav}<a href="{BIZ["google"]}" target="_blank" rel="noopener">Google Reviews</a></div>
+      <div class="footer-col footer-links"><strong>Company</strong>{mnav}</div>
     </div>
     <div class="footer-base"><span>© <span class="yr">2026</span> Sunset Garage Doors. All rights reserved.</span><span>Garage door repair &amp; installation · Monrovia, CA</span></div>
   </div>
