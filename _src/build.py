@@ -35,7 +35,7 @@ def business_schema():
         "logo": SITE + "/images/logo.png",
         "image": [SITE + "/images/og.jpg", SITE + "/images/door-double-woodgrain.jpg"],
         "telephone": "+1-626-606-9766",
-        "description": f"Licensed garage door repair and installation company in Monrovia, CA (license #{BIZ['license']}). Spring replacement, opener repair and installation, off-track repair, one-piece doors and new garage doors across the San Gabriel Valley.",
+        "description": f"Licensed garage door repair and installation company in Monrovia, CA (license #{BIZ['license']}). Spring replacement, opener repair and installation, off-track repair, one-piece doors, new garage doors and commercial garage doors (20, 22 and 24 gauge steel) across the San Gabriel Valley.",
         "address": {"@type": "PostalAddress", "streetAddress": BIZ["street"], "addressLocality": BIZ["city"], "addressRegion": BIZ["region"], "postalCode": BIZ["zip"], "addressCountry": "US"},
         "geo": {"@type": "GeoCoordinates", "latitude": BIZ["lat"], "longitude": BIZ["lng"]},
         "hasMap": BIZ["google"],
@@ -265,7 +265,7 @@ def home():
     <p class="kicker">Garage door repair &amp; installation · Monrovia, California</p>
     <h1 class="h-xl">Garage doors, fixed right.<br>Installed to last.</h1>
     <div class="hero-sub">
-      <p class="lead">Broken springs, off-track doors, openers and new garage doors for homes across the San Gabriel Valley. Licensed, local, and backed by a written warranty on every job.</p>
+      <p class="lead">Broken springs, off-track doors, openers and new garage doors for homes and businesses across the San Gabriel Valley. Licensed, local, and backed by a written warranty on every job.</p>
       <div class="btn-row">
         <a class="btn btn-accent" href="tel:{TEL}">{ICON["phone"]}Call {PHONE}</a>
         <a class="btn btn-dark" href="sms:{TEL}">{ICON["text"]}Text Us</a>

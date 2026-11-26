@@ -221,6 +221,36 @@ SERVICES = [
         "image": "door-double-woodgrain",
     },
     {
+        "slug": "commercial-garage-door-installation",
+        "name": "Commercial Garage Doors",
+        "title": "Commercial Garage Door Installation in Monrovia, CA",
+        "summary": "Steel sectional doors for shops and warehouses in 20, 22 or 24 gauge.",
+        "intro": [
+            "Sunset Garage Doors installs commercial sectional garage doors for shops, warehouses, auto bays, storage units and other businesses across Monrovia and the San Gabriel Valley.",
+            "We offer steel doors in 20, 22 and 24 gauge. The lower the gauge number, the thicker the steel: 20 gauge is the heaviest-duty of the three, and 24 gauge is a lighter, more budget-friendly option. We'll help you choose the right one for how hard the door gets used.",
+            "Every installation is covered by our 3-year warranty.",
+        ],
+        "signs": [
+            "Your commercial door is dented, bent or won't seal",
+            "You're opening a new shop, warehouse or bay",
+            "The door gets heavy daily use and keeps breaking down",
+            "You need a sturdier door for security",
+            "A space is being remodeled or a new opening was framed",
+        ],
+        "what": "We measure the opening, help you choose the steel gauge, install the door with tracks, springs and hardware sized for it, and test it before we leave. Ask about openers for commercial doors, too.",
+        "faqs": [
+            ("What's the difference between 20, 22 and 24 gauge steel?", "Gauge measures steel thickness, and a lower number means thicker steel. 20 gauge is the strongest and most dent-resistant, 22 gauge is a solid middle option, and 24 gauge is lighter and costs less. We'll recommend one based on how the door is used."),
+            ("Do you install commercial doors for small businesses?", "Yes. We install doors for shops, garages, warehouses, storage spaces and other businesses throughout the San Gabriel Valley."),
+        ],
+        "image": "commercial-closed",
+        "gallery_title": "Our commercial door work",
+        "gallery": [
+            ("commercial-open-inside", "New commercial steel sectional door open, seen from inside a warehouse", "Open, from inside"),
+            ("commercial-open-side", "Commercial steel garage door tracks and struts seen from inside", "Tracks & struts"),
+            ("commercial-opening", "Commercial steel sectional door partially open on a block building", "Partly open"),
+        ],
+    },
+    {
         "slug": "one-piece-garage-doors",
         "name": "One-Piece Doors",
         "title": "One-Piece Garage Door Repair & Installation in Monrovia, CA",
