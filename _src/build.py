@@ -571,7 +571,7 @@ def door_styles_page():
     <div class="two-col">
       <h2 class="h-md">Insulation &amp; R-value</h2>
       <div>
-        <p class="lead">Insulation keeps an attached garage more comfortable, makes the door quieter and adds strength. Our insulated Steel Back doors are rated <strong>R-10</strong>.</p>
+        <p class="lead">Insulation keeps an attached garage more comfortable, makes the door quieter and adds strength. Polypack doors are rated <strong>R-8</strong> and Steel Back doors are rated <strong>R-10</strong>.</p>
         <div class="ins-grid">{ins}</div>
         <ul class="checks">
           <li>2" thick, 3-layer insulated steel sandwich panel</li>
@@ -600,7 +600,7 @@ def door_styles_page():
 {faq_list(STYLE_FAQS, dark=True, heading="Door style questions")}
 {cta_block("Ready to pick your new door?", "Text or call us. We'll help you choose the style, color and insulation, measure your opening and give you a price. Financing available through Acorn Finance.")}"""
     return page("/door-styles/", "Garage Door Styles, Colors & Insulation | Sunset Garage Doors",
-                "Browse garage door styles installed by Sunset Garage Doors in Monrovia, CA: raised panel, carriage house, wood-look, modern flush and full-view glass. 8 colors, R-10 insulation, windows.",
+                "Browse garage door styles installed by Sunset Garage Doors in Monrovia, CA: raised panel, carriage house, wood-look, modern flush and full-view glass. 8 colors, R-8 and R-10 insulation, windows.",
                 body, schemas=[faq_schema(STYLE_FAQS), crumbs_schema([("Home", "/"), ("Door Styles", "/door-styles/")])], active="/door-styles/")
 
 
