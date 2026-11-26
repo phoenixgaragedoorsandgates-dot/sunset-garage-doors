@@ -416,6 +416,6 @@ SERVICES.sort(key=lambda x: SERVICE_ORDER.index(x["slug"]))
 
 GALLERY = [
     ("door-double-woodgrain", "Double garage door, dark wood-grain finish with top windows", "2-Car Garage Door Installation"),
-    ("door-single-woodgrain", "Single garage door, dark wood-grain finish with windows", "Single Door Installation"),
+    ("door-single-woodgrain", "Single garage door, dark wood-grain finish with windows", "1-Car Garage Door Installation"),
     ("technician-installing", "Technician fastening weather seal above a new garage door", "Weather Seal"),
 ]

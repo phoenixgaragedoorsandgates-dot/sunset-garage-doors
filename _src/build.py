@@ -257,7 +257,15 @@ def write(path, html):
 
 # ---------- pages ----------
 def home():
-    gallery = "".join(f'<figure><figcaption>{e(cap)}</figcaption><img src="/images/{img}.jpg" alt="{e(alt)}" loading="lazy"></figure>' for img, alt, cap in GALLERY)
+    from PIL import Image as _Im
+    def _ratio(img):
+        with _Im.open(os.path.join(ROOT, "images", img + ".jpg")) as im:
+            return im.width / im.height, im.width, im.height
+    gallery = ""
+    for img, alt, cap in GALLERY:
+        r, w, h = _ratio(img)
+        gallery += f'<figure style="flex: {r:.3f} 1 0"><figcaption>{e(cap)}</figcaption><img src="/images/{img}.jpg" alt="{e(alt)}" loading="lazy" width="{w}" height="{h}"></figure>'
+
     hours = "".join(f"<li><span>{d}</span><span>{h}</span></li>" for d, h in BIZ["hours_text"])
     body = f"""
 <section class="hero">
@@ -313,7 +321,7 @@ def home():
 <section class="section" id="work">
   <div class="wrap">
     {label("III", "Recent Work")}
-    <div class="gallery">{gallery}</div>
+    <div class="gallery-row">{gallery}</div>
   </div>
 </section>
 
