@@ -449,7 +449,7 @@ DOOR_STYLES = [
         "image": "newdoor-wood-look-windows",
         "alt": "Wood-look steel garage door with long top windows",
         "text": "The warmth of real wood without the upkeep. A deep woodgrain texture with a light or dark wood finish on steel, so it won't rot, warp or need re-staining. Available in carriage house, raised panel and flush styles.",
-        "specs": ["24 or 26 gauge steel", "Woodlike Light or Woodlike Dark", "Raised panel, carriage house or flush", "Non-insulated, Polypack or Steel Back"],
+        "specs": ["24 or 26 gauge steel", "Light or Dark Wood-Like finish", "Raised panel, carriage house or flush", "Non-insulated, Polypack or Steel Back"],
     },
     {
         "name": "Modern Flush",
@@ -474,7 +474,7 @@ DOOR_STYLES = [
     },
 ]
 
-DOOR_COLORS = ["White", "Almond", "Sandstone", "Woodlike Light", "Woodlike Dark", "Brown", "Graphite Texture", "Black"]
+DOOR_COLORS = [("White", "white"), ("Almond", "almond"), ("Sandstone", "sandstone"), ("Light Wood-Like", "light-wood-like"), ("Dark Wood-Like", "dark-wood-like"), ("Brown", "brown"), ("Graphite", "graphite"), ("Black", "black")]
 
 INSULATION = [
     ("Non-insulated", "A single layer of steel. The most budget-friendly option, fine for detached garages and storage."),

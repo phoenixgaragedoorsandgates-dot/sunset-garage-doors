@@ -539,7 +539,7 @@ def door_styles_page():
     </div>
   </div>
 </section>"""
-    colors = "".join(f'<li><span class="swatch" data-color="{e(c)}"></span>{e(c)}</li>' for c in DOOR_COLORS)
+    colors = "".join(f'<li><img class="swatch" src="/images/colors/{f}.jpg" alt="{e(c)} garage door color sample" loading="lazy" width="500" height="500">{e(c)}</li>' for c, f in DOOR_COLORS)
     ins = "".join(f'<div class="ins"><h3>{e(n)}</h3><p>{e(t)}</p></div>' for n, t in INSULATION)
     glass = "".join(f"<li>{e(g)}</li>" for g in GLASS)
     n = len(DOOR_STYLES)
