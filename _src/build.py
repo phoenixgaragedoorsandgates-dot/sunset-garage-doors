@@ -12,6 +12,7 @@ ROOT = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
 TEL = BIZ["phone_tel"]
 PHONE = BIZ["phone_display"]
 BIZ_ID = SITE + "/#business"
+GA_ID = "G-V8FTN1B6RC"
 ROMAN = ["I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X", "XI", "XII"]
 
 ICON = {
@@ -101,6 +102,8 @@ def page(path, title, description, body, schemas=(), og_image="og", active=""):
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/styles.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id={GA_ID}"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){{dataLayer.push(arguments);}}gtag('js',new Date());gtag('config','{GA_ID}');</script>
 {"".join(ld(s) for s in all_schemas)}
 </head>
 <body>
@@ -131,7 +134,7 @@ def page(path, title, description, body, schemas=(), og_image="og", active=""):
       <div class="footer-col footer-links"><strong>Services</strong>{svc_links}</div>
       <div class="footer-col footer-links"><strong>Company</strong>{mnav}</div>
     </div>
-    <div class="footer-base"><span>© <span class="yr">2026</span> Sunset Garage Doors. All rights reserved.</span><span>Garage door repair &amp; installation · Monrovia, CA</span></div>
+    <div class="footer-base"><span>© <span class="yr">2026</span> Sunset Garage Doors. All rights reserved.</span><span>Garage door repair &amp; installation · Monrovia, CA · <a href="/privacy/">Privacy Policy</a></span></div>
   </div>
 </footer>
 <div class="mobile-bar">
@@ -609,6 +612,37 @@ def post_page(p):
                 og_image=p["image"], active="/blog/")
 
 
+def privacy_page():
+    body = f"""
+<section class="page-head">
+  <div class="wrap">
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> / Privacy Policy</nav>
+    <h1 class="h-xl">Privacy Policy</h1>
+    <p class="lead">Last updated November 26, 2026</p>
+  </div>
+</section>
+<section class="section section-tight">
+  <div class="wrap">
+    <div class="article">
+      <p>This policy explains what information Sunset Garage Doors ("we") collects when you visit sunsetgaragedoorsmonrovia.com and how it is used.</p>
+      <h2>Information you give us</h2>
+      <p>This website has no forms and no accounts. If you call or text us at {PHONE}, we receive your phone number and whatever you tell us, and we use it only to answer your request, schedule service and follow up on your job. We don't sell it.</p>
+      <h2>Website analytics</h2>
+      <p>We use Google Analytics to understand how visitors use the site, for example which pages are viewed, roughly where visitors are located (city level), what device they use, and whether they tap our call or text buttons. Google Analytics uses cookies and similar technology to collect this information. It does not give us your name, phone number or email.</p>
+      <p>You can learn how Google uses this data at <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener">policies.google.com/technologies/partner-sites</a>, and you can opt out with the <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener">Google Analytics opt-out browser add-on</a> or by blocking cookies in your browser.</p>
+      <h2>Embedded maps and links</h2>
+      <p>Some pages show a Google Map and link to our profiles on Google, Yelp, Facebook and Instagram. Those services have their own privacy policies.</p>
+      <h2>Your choices</h2>
+      <p>California residents may ask what personal information we hold about them and ask us to delete it. To make a request, call or text {PHONE}.</p>
+      <h2>Contact</h2>
+      <p>Sunset Garage Doors<br>{e(BIZ["street"])}, {BIZ["city"]}, {BIZ["region"]} {BIZ["zip"]}<br><a href="tel:{TEL}">{PHONE}</a></p>
+    </div>
+  </div>
+</section>"""
+    return page("/privacy/", "Privacy Policy | Sunset Garage Doors", "How Sunset Garage Doors handles information collected on sunsetgaragedoorsmonrovia.com.", body,
+                schemas=[crumbs_schema([("Home", "/"), ("Privacy Policy", "/privacy/")])])
+
+
 def not_found():
     body = f"""
 <section class="page-head">
@@ -667,6 +701,7 @@ def main():
     write("/service-areas/", areas_page()); urls.append("/service-areas/")
     write("/faq/", faq_page()); urls.append("/faq/")
     write("/contact/", contact_page()); urls.append("/contact/")
+    write("/privacy/", privacy_page()); urls.append("/privacy/")
     write("/blog/", blog_index()); urls.append("/blog/")
     for p in POSTS:
         write(f"/blog/{p['slug']}/", post_page(p)); urls.append(f"/blog/{p['slug']}/")

@@ -42,6 +42,17 @@
     if (document.fonts && document.fonts.ready) document.fonts.ready.then(function () { settleOn(startId, false); });
   }
 
+  // Analytics: count taps on call and text buttons
+  document.addEventListener("click", function (e) {
+    var a = e.target.closest && e.target.closest("a[href^='tel:'], a[href^='sms:']");
+    if (!a || typeof window.gtag !== "function") return;
+    var where = a.closest(".mobile-bar") ? "mobile_bar" : a.closest(".site-header, .mnav") ? "header"
+      : a.closest(".site-footer") ? "footer" : a.closest(".hero") ? "hero" : "page";
+    window.gtag("event", a.href.indexOf("tel:") === 0 ? "call_click" : "text_click", {
+      link_location: where, page_path: location.pathname
+    });
+  }, true);
+
   // Mobile menu
   var btn = document.querySelector(".menu-btn");
   var mnav = document.getElementById("mnav");
