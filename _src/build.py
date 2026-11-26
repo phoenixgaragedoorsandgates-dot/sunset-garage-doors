@@ -541,7 +541,7 @@ def door_styles_page():
 </section>"""
     colors = "".join(f'<li><img class="swatch" src="/images/colors/{f}.jpg" alt="{e(c)} garage door color sample" loading="lazy" width="500" height="500">{e(c)}</li>' for c, f in DOOR_COLORS)
     ins = "".join(f'<div class="ins"><h3>{e(n)}</h3><p>{e(t)}</p></div>' for n, t in INSULATION)
-    glass = "".join(f"<li>{e(g)}</li>" for g in GLASS)
+    glass = "".join(f'<li><img class="swatch" src="/images/glass/{f}.jpg" alt="{e(g)} garage door window glass sample" loading="lazy" width="300" height="300">{e(g)}</li>' for g, f in GLASS)
     n = len(DOOR_STYLES)
     body = f"""
 <section class="page-head">
@@ -591,7 +591,7 @@ def door_styles_page():
       <h2 class="h-md">Windows &amp; glass</h2>
       <div>
         <p class="lead">Add natural light and style. Choose from rows of windows along the top, decorative carriage house windows, modern side windows or full-view glass.</p>
-        <ul class="cities">{glass}</ul>
+        <ul class="colors">{glass}</ul>
         <p class="body-note">Window inserts are high-impact plastic with a 7-year warranty against yellowing.</p>
       </div>
     </div>
