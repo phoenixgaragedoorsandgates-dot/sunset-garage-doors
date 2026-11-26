@@ -16,60 +16,93 @@
 
   var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  // Continuous auto-scroll that people can also swipe/drag.
-  // Content is repeated 3 times; we stay in the middle copy and jump by one
-  // copy-width when the user gets near either edge, so it never runs out.
-  function autoScroll(el, loopWidth, speed) {
-    var hover = false, holdUntil = 0, last = null, touching = false, pos = 0;
-    function w() { return loopWidth(); }
-    function recenter() {
-      var lw = w();
-      if (lw <= 0) return;
-      if (el.scrollLeft < lw * 0.5) el.scrollLeft += lw;
-      else if (el.scrollLeft > lw * 1.5) el.scrollLeft -= lw;
+  // Carousels: we move the strip ourselves with a CSS transform (no native
+  // scrolling), so fast flicks on iPhone can't leave it blank. Content is
+  // repeated 3x and the position wraps, so it loops forever both ways.
+  function loopCarousel(el, loopWidth, speed) {
+    var offset = 0, vel = 0, last = null, hover = false, holdUntil = 0;
+    var down = false, dragging = false, startX = 0, startY = 0, lastX = 0, lastT = 0, anim = null;
+    function mod(a, n) { return ((a % n) + n) % n; }
+    function render() {
+      var w = loopWidth();
+      if (w > 0) el.style.setProperty("--x", (-(w + mod(offset, w))).toFixed(2) + "px");
     }
-    function start() { el.scrollLeft = w(); pos = el.scrollLeft; }
     function tick(now) {
       if (last === null) last = now;
-      var dt = Math.min(now - last, 100) / 1000;
+      var dt = Math.min(now - last, 64) / 1000;
       last = now;
-      if (!reduce && !hover && !touching && now > holdUntil) {
-        pos += speed * dt;
-        el.scrollLeft = pos;
-        recenter();
-        pos = el.scrollLeft + (pos % 1);
-      } else {
-        pos = el.scrollLeft;
+      if (anim) {
+        var t = Math.min((now - anim.t0) / anim.dur, 1), e2 = 1 - Math.pow(1 - t, 3);
+        offset = anim.from + (anim.to - anim.from) * e2;
+        if (t >= 1) anim = null;
+      } else if (!dragging) {
+        if (Math.abs(vel) > 5) {
+          offset += vel * dt;
+          vel *= Math.pow(0.04, dt); // smooth slow-down
+        } else {
+          vel = 0;
+          if (!reduce && !hover && now > holdUntil) offset += speed * dt;
+        }
       }
+      render();
       requestAnimationFrame(tick);
     }
-    if (document.readyState === "complete") start(); else window.addEventListener("load", start);
-    start();
-    requestAnimationFrame(tick);
-    el.addEventListener("scroll", recenter, { passive: true });
-    window.addEventListener("resize", recenter);
-    el.addEventListener("mouseenter", function () { hover = true; });
-    el.addEventListener("mouseleave", function () { hover = false; });
-    el.addEventListener("touchstart", function () { touching = true; }, { passive: true });
-    el.addEventListener("touchend", function () { touching = false; holdUntil = performance.now() + 2500; }, { passive: true });
-    el.addEventListener("wheel", function () { holdUntil = performance.now() + 2500; }, { passive: true });
-    var dragging = false, startX = 0, startLeft = 0;
-    el.addEventListener("mousedown", function (e) { dragging = true; startX = e.pageX; startLeft = el.scrollLeft; el.classList.add("dragging"); e.preventDefault(); });
-    window.addEventListener("mousemove", function (e) {
-      if (!dragging) return;
-      el.scrollLeft = startLeft - (e.pageX - startX);
-      var lw = w(), before = el.scrollLeft; recenter();
-      startLeft += el.scrollLeft - before;
+    el.addEventListener("pointerdown", function (e) {
+      if (e.button !== undefined && e.button !== 0) return;
+      down = true; dragging = false; anim = null;
+      startX = lastX = e.clientX; startY = e.clientY; lastT = performance.now();
     });
-    window.addEventListener("mouseup", function () { if (dragging) { dragging = false; el.classList.remove("dragging"); holdUntil = performance.now() + 1500; } });
-    return { hold: function (ms) { holdUntil = performance.now() + ms; } };
+    el.addEventListener("pointermove", function (e) {
+      if (!down) return;
+      var dx = e.clientX - startX, dy = e.clientY - startY;
+      if (!dragging) {
+        if (Math.abs(dx) < 6 || Math.abs(dx) < Math.abs(dy)) return;
+        dragging = true; vel = 0;
+        el.classList.add("dragging");
+        try { el.setPointerCapture(e.pointerId); } catch (err) {}
+      }
+      var now = performance.now(), mx = e.clientX - lastX;
+      offset -= mx;
+      var dtm = Math.max(now - lastT, 1);
+      vel = vel * 0.6 + (-mx / dtm * 1000) * 0.4;
+      lastX = e.clientX; lastT = now;
+    });
+    function end() {
+      if (!down) return;
+      down = false;
+      if (dragging) {
+        dragging = false; el.classList.remove("dragging");
+        if (performance.now() - lastT > 80) vel = 0;
+        vel = Math.max(-6000, Math.min(6000, vel));
+      }
+      holdUntil = performance.now() + 2500;
+    }
+    el.addEventListener("pointerup", end);
+    el.addEventListener("pointercancel", end);
+    el.addEventListener("lostpointercapture", end);
+    el.addEventListener("mouseenter", function () { hover = true; });
+    el.addEventListener("mouseleave", function () { hover = false; end(); });
+    el.addEventListener("dragstart", function (e) { e.preventDefault(); });
+    el.addEventListener("wheel", function (e) {
+      if (Math.abs(e.deltaX) > Math.abs(e.deltaY)) { e.preventDefault(); offset += e.deltaX; vel = 0; holdUntil = performance.now() + 2500; }
+    }, { passive: false });
+    window.addEventListener("resize", render);
+    render();
+    requestAnimationFrame(tick);
+    return {
+      step: function (px) {
+        vel = 0; holdUntil = performance.now() + 4000;
+        var from = anim ? anim.to : offset;
+        anim = { from: offset, to: from + px, t0: performance.now(), dur: 450 };
+      }
+    };
   }
 
-  // Brand logos (3 identical tracks)
+  // Brand logos (3 identical tracks in the HTML)
   var marquee = document.querySelector(".marquee");
   if (marquee) {
     var mTrack = marquee.querySelector(".marquee-track");
-    autoScroll(marquee, function () { return mTrack.offsetWidth + 16; }, 35);
+    loopCarousel(marquee, function () { return mTrack.offsetWidth + 16; }, 35);
   }
 
   // Reviews carousel
@@ -84,13 +117,12 @@
     var clone = c.cloneNode(true); clone.setAttribute("aria-hidden", "true");
     track.appendChild(clone);
   });
-  var reviews = autoScroll(track, function () { return track.scrollWidth / 3; }, 40);
+  var n = originals.length;
+  var reviews = loopCarousel(track, function () {
+    return track.children[n].offsetLeft - track.children[0].offsetLeft;
+  }, 40);
   function cardStep() { var c = track.querySelector(".review"); return c ? c.getBoundingClientRect().width + 16 : 300; }
   document.querySelectorAll(".carousel-btn").forEach(function (b) {
-    b.addEventListener("click", function () {
-      var target = track.scrollLeft + (+b.dataset.dir) * cardStep();
-      reviews.hold(4000);
-      track.scrollTo({ left: target, behavior: "smooth" });
-    });
+    b.addEventListener("click", function () { reviews.step((+b.dataset.dir) * cardStep()); });
   });
 })();

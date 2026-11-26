@@ -137,7 +137,7 @@ h3 { font-size: 1.2rem; }
 .carousel-btn { width: 52px; height: 52px; border: 1px solid var(--ink); background: transparent; color: var(--ink); display: grid; place-items: center; cursor: pointer; border-radius: 0; }
 .carousel-btn:hover { background: var(--ink); color: #fff; }
 .carousel-btn svg { width: 20px; height: 20px; }
-.carousel { display: grid; grid-auto-flow: column; grid-auto-columns: calc((100% - 32px) / 3); gap: 16px; overflow-x: auto; scrollbar-width: none; margin-bottom: 36px; }
+.carousel { display: grid; grid-auto-flow: column; grid-auto-columns: calc((100% - 32px) / 3); gap: 16px; overflow: hidden; touch-action: pan-y; user-select: none; -webkit-user-select: none; margin-bottom: 36px; }
 .carousel::-webkit-scrollbar { display: none; }
 .carousel:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
 .review { scroll-snap-align: start; margin: 0; background: var(--paper); padding: clamp(24px, 3vw, 40px); display: flex; flex-direction: column; gap: 22px; min-height: 340px; }
@@ -253,7 +253,8 @@ details[open] .plus::after { transform: rotate(0); }
 /* Brand logo marquee */
 .brands-note { margin-top: 0; }
 .marquee-wrap { margin-bottom: clamp(40px, 6vw, 80px); -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); }
-.marquee { display: flex; overflow-x: auto; scrollbar-width: none; cursor: grab; gap: 16px; overscroll-behavior-x: contain; -webkit-overflow-scrolling: touch; }
+.marquee { display: flex; overflow: hidden; cursor: grab; gap: 16px; touch-action: pan-y; user-select: none; -webkit-user-select: none; }
+.marquee-track, .carousel > * { transform: translate3d(var(--x, 0px), 0, 0); will-change: transform; }
 .marquee-track { display: flex; gap: 16px; list-style: none; margin: 0; padding: 0; flex: none; min-width: 100%; justify-content: space-around; }
 .marquee::-webkit-scrollbar { display: none; }
 .marquee.dragging, .carousel.dragging { cursor: grabbing; user-select: none; }
@@ -264,12 +265,6 @@ details[open] .plus::after { transform: rotate(0); }
 .brand-word { font-size: clamp(1.2rem, 1.8vw, 1.6rem); font-weight: 600; letter-spacing: -0.02em; text-align: center; line-height: 1.1; color: #555; }
 .finance-row { align-items: start; }
 @media (max-width: 860px) { .finance-row > div:first-child { display: none; } }
-@media (prefers-reduced-motion: reduce) {
-  .marquee-wrap { -webkit-mask-image: none; mask-image: none; }
-  .marquee { flex-wrap: wrap; overflow: visible; }
-  .marquee-track { animation: none; flex-wrap: wrap; min-width: 0; }
-  .marquee-track[aria-hidden] { display: none; }
-}
 .gallery-4 { grid-template-columns: repeat(4, 1fr); }
 @media (max-width: 1000px) { .gallery-4 { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 760px) { .gallery-4 { grid-template-columns: 1fr 1fr; gap: 24px 12px; } .gallery-4 img { aspect-ratio: 3 / 4; } }
