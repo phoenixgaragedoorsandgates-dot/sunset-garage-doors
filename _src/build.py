@@ -292,7 +292,7 @@ def home():
 <section class="section" id="services">
   <div class="wrap">
     {label("I", "Services")}
-    <div class="two-col head-row"><h2 class="h-lg">Everything your garage door needs, from one call.</h2><a class="link-arrow" href="/services/">All services {ICON["arrow"]}</a></div>
+    <div class="two-col head-row"><h2 class="h-lg">Every garage door service, one call away.</h2><a class="link-arrow" href="/services/">All services {ICON["arrow"]}</a></div>
     {service_rows(SERVICES)}
   </div>
 </section>
