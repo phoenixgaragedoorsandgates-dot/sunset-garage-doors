@@ -212,7 +212,7 @@ def service_rows(services):
 
 BRAND_LOGOS = [
     ("liftmaster", "LiftMaster"), ("chamberlain", "Chamberlain"), ("elegant", "Elegant Custom Garage Doors & Gates"),
-    ("instock", "Instock Garage Doors"), (None, "CHI Overhead Doors"),
+    ("instock", "Instock Garage Doors"), ("chi", "CHI Overhead Doors"),
 ]
 
 
