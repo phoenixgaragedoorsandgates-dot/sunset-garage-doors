@@ -108,6 +108,7 @@ SERVICES = [
         ],
         "image": "spring-broken-studio",
         "gallery": [
+            ("spring-technician-winding", "Sunset Garage Doors technician using winding bars to set a new torsion spring", "Winding a new torsion spring"),
             ("spring-broken-closeup", "Broken torsion spring with a visible gap in the coils", "Broken torsion spring"),
             ("spring-broken-gap", "Snapped garage door torsion spring on the shaft above the door", "Snapped spring"),
             ("spring-old-removed", "Worn torsion springs and old rollers removed during a spring replacement", "Old springs & rollers removed"),
