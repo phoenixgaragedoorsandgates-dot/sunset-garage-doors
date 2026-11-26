@@ -37,7 +37,7 @@ POSTS = [
         "title": "Garage Door Off Track? What to Do (and What Not to Do)",
         "description": "Why garage doors come off their tracks, why it's dangerous, and how a technician safely fixes an off-track door.",
         "date": "2026-11-26",
-        "image": "door-single-woodgrain",
+        "image": "offtrack-collapsed",
         "related": "garage-door-off-track-repair",
         "body": """
 <p>A garage door that has slipped off its track is more than an inconvenience. The door is heavy, under spring tension, and no longer properly supported. Here's what causes it and what to do.</p>
